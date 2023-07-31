@@ -15,8 +15,7 @@ final class BookshelfCollectionViewController: UICollectionViewController {
         
         registerCell()
         configureCollectionViewLayout()
-        
-        title = "brick의 책장"
+        configureNavigationItems()
     }
 
 }
@@ -54,6 +53,10 @@ private extension BookshelfCollectionViewController {
         collectionView.collectionViewLayout = layout
     }
     
+    func configureNavigationItems() {
+        title = "brick의 책장"
+        navigationItem.backButtonTitle = ""
+    }
 }
 
 // MARK: - Collection View
@@ -85,4 +88,15 @@ extension BookshelfCollectionViewController {
         return cell
     }
     
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        
+        vc.detailTitle = MovieInfo.movies[indexPath.item].title
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

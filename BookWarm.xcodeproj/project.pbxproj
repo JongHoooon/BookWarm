@@ -19,6 +19,8 @@
 		ED4AD5672A779DF600922860 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */; };
 		ED4AD56A2A77A0B100922860 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5682A77A0B100922860 /* Movie.swift */; };
 		ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5692A77A0B100922860 /* MovieInfo.swift */; };
+		ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5702A77A37F00922860 /* DetailViewController.swift */; };
+		ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		ED4AD5682A77A0B100922860 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		ED4AD5692A77A0B100922860 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		ED4AD5702A77A37F00922860 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,8 @@
 				ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */,
 				ED4AD54F2A7799EC00922860 /* ViewController.swift */,
 				ED4AD5512A7799EC00922860 /* Main.storyboard */,
-				ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */,
+				ED4AD5722A77A47C00922860 /* Extension */,
+				ED4AD56F2A77A37400922860 /* Detail */,
 				ED4AD5652A779A6900922860 /* Bookshelf */,
 				ED4AD5542A7799ED00922860 /* Assets.xcassets */,
 				ED4AD5562A7799ED00922860 /* LaunchScreen.storyboard */,
@@ -115,6 +120,23 @@
 				ED4AD55F2A779A2C00922860 /* BookshelfCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ED4AD56F2A77A37400922860 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				ED4AD5702A77A37F00922860 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		ED4AD5722A77A47C00922860 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */,
+				ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
 				ED4AD56A2A77A0B100922860 /* Movie.swift in Sources */,
 				ED4AD5612A779A2C00922860 /* BookshelfCollectionViewCell.swift in Sources */,
 				ED4AD5642A779A6300922860 /* BookshelfCollectionViewController.swift in Sources */,
@@ -196,6 +219,7 @@
 				ED4AD5672A779DF600922860 /* UICollectionViewCell+Extension.swift in Sources */,
 				ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,
+				ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
