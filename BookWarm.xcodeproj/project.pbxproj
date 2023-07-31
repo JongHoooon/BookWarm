@@ -21,6 +21,8 @@
 		ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5692A77A0B100922860 /* MovieInfo.swift */; };
 		ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5702A77A37F00922860 /* DetailViewController.swift */; };
 		ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */; };
+		ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5762A77A5C700922860 /* SearchViewController.swift */; };
+		ED885F152A77A860001BD107 /* BWImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		ED4AD5692A77A0B100922860 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		ED4AD5702A77A37F00922860 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		ED4AD5762A77A5C700922860 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		ED885F142A77A860001BD107 /* BWImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,8 @@
 				ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */,
 				ED4AD54F2A7799EC00922860 /* ViewController.swift */,
 				ED4AD5512A7799EC00922860 /* Main.storyboard */,
-				ED4AD5722A77A47C00922860 /* Extension */,
+				ED885F132A77A852001BD107 /* Global */,
+				ED4AD5752A77A5B100922860 /* Search */,
 				ED4AD56F2A77A37400922860 /* Detail */,
 				ED4AD5652A779A6900922860 /* Bookshelf */,
 				ED4AD5542A7799ED00922860 /* Assets.xcassets */,
@@ -137,6 +142,23 @@
 				ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		ED4AD5752A77A5B100922860 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				ED4AD5762A77A5C700922860 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		ED885F132A77A852001BD107 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				ED4AD5722A77A47C00922860 /* Extension */,
+				ED885F142A77A860001BD107 /* BWImages.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
+				ED885F152A77A860001BD107 /* BWImages.swift in Sources */,
+				ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */,
 				ED4AD56A2A77A0B100922860 /* Movie.swift in Sources */,
 				ED4AD5612A779A2C00922860 /* BookshelfCollectionViewCell.swift in Sources */,
 				ED4AD5642A779A6300922860 /* BookshelfCollectionViewController.swift in Sources */,

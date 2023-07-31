@@ -53,7 +53,14 @@
                             <outlet property="delegate" destination="YhH-y2-iWp" id="b8W-e3-mcr"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="KEp-gW-ndB"/>
+                    <navigationItem key="navigationItem" id="KEp-gW-ndB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="csi-UQ-bdM">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="searchBarButtonTapped:" destination="YhH-y2-iWp" id="H1J-jK-kkg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lx0-6v-chy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,15 +93,27 @@
             </objects>
             <point key="canvasLocation" x="3259" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="kKJ-3w-rqT">
             <objects>
-                <viewController id="B41-S4-pMv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="B41-S4-pMv" customClass="SearchViewController" customModule="BookWarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYb-ks-WjZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-vy-tYK">
+                                <rect key="frame" x="86.333333333333329" y="390.33333333333331" width="220.33333333333337" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LXU-Jx-9hD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vaz-vy-tYK" firstAttribute="centerY" secondItem="fYb-ks-WjZ" secondAttribute="centerY" id="btp-AR-xbT"/>
+                            <constraint firstItem="Vaz-vy-tYK" firstAttribute="centerX" secondItem="fYb-ks-WjZ" secondAttribute="centerX" id="euq-ld-nRb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7zq-4c-Z6p"/>
                 </viewController>
@@ -120,26 +139,11 @@
             </objects>
             <point key="canvasLocation" x="1212.9770992366412" y="-27.464788732394368"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qxl-Ht-JWM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cqz-eQ-rC4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hdi-Tj-ttq">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="B41-S4-pMv" kind="relationship" relationship="rootViewController" id="I2j-N6-UYf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="42q-mx-eve" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1213" y="777"/>
-        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

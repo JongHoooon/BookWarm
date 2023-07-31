@@ -17,7 +17,19 @@ final class BookshelfCollectionViewController: UICollectionViewController {
         configureCollectionViewLayout()
         configureNavigationItems()
     }
-
+    
+    @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(
+            name: "Main",
+            bundle: nil
+        )
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+    }
+    
 }
 
 // MARK: - Private Method
