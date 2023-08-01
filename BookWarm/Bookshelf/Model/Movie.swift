@@ -14,6 +14,7 @@ struct Movie {
     let overview: String
     let rate: Double
     var isLiked: Bool
+    var backgroundColor: UIColor?
     
     var trimedReleaseDate: String {
         return releaseDate
