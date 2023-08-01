@@ -34,7 +34,8 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(
-            name: StroyboardNames.detail,
+            name: StroyboardNames.main
+            ,
             bundle: nil
         )
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
