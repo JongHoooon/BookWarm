@@ -9,7 +9,9 @@ import UIKit
 
 
 final class BookshelfCollectionViewController: UICollectionViewController {
-
+    
+    private var movies = MovieInfo().movies
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,7 +82,7 @@ extension BookshelfCollectionViewController {
         numberOfItemsInSection section: Int
     ) -> Int {
         
-        return MovieInfo.movies.count
+        return movies.count
     }
     
     override func collectionView(
@@ -93,7 +95,7 @@ extension BookshelfCollectionViewController {
             for: indexPath
         ) as! BookshelfCollectionViewCell
         
-        let item = MovieInfo.movies[indexPath.item]
+        let item = movies[indexPath.item]
         cell.configureMovieCell(item: item)
         cell.configureBackground()
         
@@ -107,7 +109,7 @@ extension BookshelfCollectionViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.detailTitle = MovieInfo.movies[indexPath.item].title
+        vc.detailTitle = movies[indexPath.item].title
         
         navigationController?.pushViewController(vc, animated: true)
     }

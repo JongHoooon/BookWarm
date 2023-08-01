@@ -2,7 +2,7 @@
 import Foundation
 
 struct MovieInfo {
-    static let movies: [Movie] = [
+    var movies: [Movie] = [
         Movie(
             title: "암살",
             releaseDate: "2015.07.22.",
