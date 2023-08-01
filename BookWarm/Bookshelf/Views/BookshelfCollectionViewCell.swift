@@ -12,10 +12,11 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var relaeseDateLabel: UILabel!
     @IBOutlet weak private var movieImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
     private var colors: [UIColor] = [
         .label, .brown, .green,
-        .cyan, .red, .orange,
+        .cyan, .orange, .darkGray,
         .purple, .link, .magenta,
         .blue, .systemTeal, .systemGreen
     ]
@@ -28,15 +29,10 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     }
     
     func configureMovieCell(item movie: Movie) {
-        var releaseDate = movie.releaseDate
-        releaseDate = releaseDate
-            .split(separator: ".")
-            .suffix(2)
-            .joined(separator: ".")
-        
         titleLabel.text = movie.title
-        relaeseDateLabel.text = releaseDate
+        relaeseDateLabel.text = movie.trimedReleaseDate
         movieImageView.image = UIImage(named: "\(movie.title)")
+        likeButton.setImage(movie.likeImage, for: .normal)
     }
     
 }

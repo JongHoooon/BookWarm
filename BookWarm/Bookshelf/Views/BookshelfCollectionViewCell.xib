@@ -35,32 +35,45 @@
                             <constraint firstAttribute="width" secondItem="AC9-Iv-3Hv" secondAttribute="height" multiplier="2/3" id="5KG-r4-lcB"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-Zv-rtj">
+                        <rect key="frame" x="2.6666666666666679" y="172.66666666666666" width="50.666666666666657" height="35"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
+                <constraint firstItem="whc-NI-QWV" firstAttribute="top" secondItem="ud9-Zv-rtj" secondAttribute="bottom" constant="8" id="4tz-eC-QLo"/>
                 <constraint firstItem="whc-NI-QWV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="EHB-UD-NWP"/>
                 <constraint firstAttribute="bottom" secondItem="AC9-Iv-3Hv" secondAttribute="bottom" id="POq-Yr-hal"/>
                 <constraint firstAttribute="bottom" secondItem="whc-NI-QWV" secondAttribute="bottom" constant="20" id="UVh-19-bRs"/>
                 <constraint firstAttribute="trailing" secondItem="AC9-Iv-3Hv" secondAttribute="trailing" constant="20" id="UzU-FC-8cD"/>
+                <constraint firstItem="ud9-Zv-rtj" firstAttribute="centerX" secondItem="whc-NI-QWV" secondAttribute="centerX" id="arb-xK-9ab"/>
                 <constraint firstItem="Exw-8L-WA5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="dAM-LH-R9s"/>
                 <constraint firstItem="AC9-Iv-3Hv" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="flw-zt-IQN"/>
                 <constraint firstItem="Exw-8L-WA5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="y7x-8H-NdE"/>
             </constraints>
             <size key="customSize" width="294" height="249"/>
             <connections>
+                <outlet property="likeButton" destination="ud9-Zv-rtj" id="oja-2c-ojJ"/>
                 <outlet property="movieImageView" destination="AC9-Iv-3Hv" id="Omb-aW-UN3"/>
                 <outlet property="relaeseDateLabel" destination="whc-NI-QWV" id="2gS-aU-UOw"/>
                 <outlet property="titleLabel" destination="Exw-8L-WA5" id="hrH-DV-KmD"/>
             </connections>
-            <point key="canvasLocation" x="97.70992366412213" y="-51.760563380281695"/>
+            <point key="canvasLocation" x="105" y="-36"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="암살" width="240" height="361"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
