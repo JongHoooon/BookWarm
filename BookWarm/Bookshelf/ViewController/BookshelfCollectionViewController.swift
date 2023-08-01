@@ -26,7 +26,7 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(
-            name: "Main",
+            name: StroyboardNames.detail,
             bundle: nil
         )
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
@@ -120,7 +120,7 @@ extension BookshelfCollectionViewController {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        let sb = UIStoryboard(name: "Detail", bundle: nil)
+        let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
         vc.movie = movies[indexPath.item]
