@@ -21,7 +21,7 @@
 		ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5702A77A37F00922860 /* DetailViewController.swift */; };
 		ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */; };
 		ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5762A77A5C700922860 /* SearchViewController.swift */; };
-		ED885F152A77A860001BD107 /* BWImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImages.swift */; };
+		ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImageNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		ED4AD5702A77A37F00922860 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		ED4AD5762A77A5C700922860 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		ED885F142A77A860001BD107 /* BWImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImages.swift; sourceTree = "<group>"; };
+		ED885F142A77A860001BD107 /* BWImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImageNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4AD5722A77A47C00922860 /* Extension */,
-				ED885F142A77A860001BD107 /* BWImages.swift */,
+				ED885F142A77A860001BD107 /* BWImageNames.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
-				ED885F152A77A860001BD107 /* BWImages.swift in Sources */,
+				ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */,
 				ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */,
 				ED4AD56A2A77A0B100922860 /* Movie.swift in Sources */,
 				ED4AD5612A779A2C00922860 /* BookshelfCollectionViewCell.swift in Sources */,
