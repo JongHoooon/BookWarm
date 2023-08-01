@@ -10,7 +10,11 @@ import UIKit
 
 final class BookshelfCollectionViewController: UICollectionViewController {
     
-    private var movies = MovieInfo().movies
+    private var movies = MovieInfo().movies {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +75,11 @@ private extension BookshelfCollectionViewController {
         title = "brick의 책장"
         navigationItem.backButtonTitle = ""
     }
+    
+    @objc
+    func likeButtonTapped(_ sender: UIButton) {
+        movies[sender.tag].isLiked.toggle()
+    }
 }
 
 // MARK: - Collection View
@@ -96,7 +105,13 @@ extension BookshelfCollectionViewController {
         ) as! BookshelfCollectionViewCell
         
         let item = movies[indexPath.item]
-        cell.configureMovieCell(item: item)        
+        cell.configureMovieCell(item: item)
+        cell.likeButton.tag = indexPath.item
+        cell.likeButton.addTarget(
+            self,
+            action: #selector(likeButtonTapped),
+            for: .touchUpInside
+        )
         
         return cell
     }
