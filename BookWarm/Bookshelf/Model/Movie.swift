@@ -22,6 +22,13 @@ struct Movie {
             .suffix(2)
             .joined(separator: ".")
     }
+    
+    var infoText: String {
+        return [
+            releaseDate, "\(runtime)분"
+        ].joined(separator: " | ")
+    }
+    
     var likeImage: UIImage? {
         switch isLiked {
         case true:      return UIImage(systemName: BWImageNames.heartFill)

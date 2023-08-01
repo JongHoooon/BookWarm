@@ -120,10 +120,10 @@ extension BookshelfCollectionViewController {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.detailTitle = movies[indexPath.item].title
+        vc.movie = movies[indexPath.item]
         
         navigationController?.pushViewController(vc, animated: true)
     }
