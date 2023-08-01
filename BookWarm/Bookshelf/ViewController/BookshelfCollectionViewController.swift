@@ -96,8 +96,7 @@ extension BookshelfCollectionViewController {
         ) as! BookshelfCollectionViewCell
         
         let item = movies[indexPath.item]
-        cell.configureMovieCell(item: item)
-        cell.configureBackground()
+        cell.configureMovieCell(item: item)        
         
         return cell
     }

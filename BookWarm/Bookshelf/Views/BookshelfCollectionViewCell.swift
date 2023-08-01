@@ -21,7 +21,13 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
         .blue, .systemTeal, .systemGreen
     ]
     
-    func configureBackground() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        configureBackground()
+    }
+    
+    private func configureBackground() {
         backgroundColor = .clear
         contentView.backgroundColor = colors.randomElement()
         contentView.layer.cornerRadius = 16.0
