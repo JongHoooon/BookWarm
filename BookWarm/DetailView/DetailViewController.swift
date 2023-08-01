@@ -9,6 +9,12 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    var movie: Movie?
+    
+    // MARK: - UI
+    
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -16,8 +22,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var overViewLabel: UILabel!
     @IBOutlet weak var bottomBackgroundView: UIView!
     
-    
-    var movie: Movie?
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +31,20 @@ final class DetailViewController: UIViewController {
         configureMovie()
     }
     
-    private func configureUI() {
+}
+
+// MARK: - Private Method
+
+private extension DetailViewController {
+    
+    func configureUI() {
         postImageView.layer.cornerRadius = 4.0
         
         bottomBackgroundView.layer.cornerRadius = 16.0
-        bottomBackgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        bottomBackgroundView.layer.maskedCorners = [
+            .layerMinXMinYCorner,
+            .layerMaxXMinYCorner
+        ]
         bottomBackgroundView.clipsToBounds = true
         bottomBackgroundView.backgroundColor = .white
         
@@ -40,7 +54,7 @@ final class DetailViewController: UIViewController {
         ]
     }
     
-    private func configureMovie() {
+    func configureMovie() {
         guard let movie = movie else { return }
         
         postImageView.image = UIImage(named: movie.title)
