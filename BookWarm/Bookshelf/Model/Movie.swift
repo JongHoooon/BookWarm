@@ -31,8 +31,8 @@ struct Movie {
     
     var likeImage: UIImage? {
         switch isLiked {
-        case true:      return UIImage(systemName: BWImageNames.heartFill)
-        case false:     return UIImage(systemName: BWImageNames.heart)
+        case true:      return UIImage(systemName: BWImageNames.System.heartFill)
+        case false:     return UIImage(systemName: BWImageNames.System.heart)
         }
     }
 }

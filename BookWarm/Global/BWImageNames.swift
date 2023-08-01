@@ -8,8 +8,10 @@
 import UIKit
 
 enum BWImageNames {
-    static let xmark = "xmark"
-    
-    static let heart = "heart"
-    static let heartFill = "heart.fill"
+    enum System {
+        static let xmark = "xmark"
+        
+        static let heart = "heart"
+        static let heartFill = "heart.fill"
+    }
 }

@@ -15,7 +15,7 @@ final class SearchViewController: UIViewController {
         title = "검색 화면"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: BWImageNames.xmark),
+            image: UIImage(systemName: BWImageNames.System.xmark),
             style: .plain,
             target: self,
             action: #selector(dissmissBarButtonTapped)
