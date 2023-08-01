@@ -82,9 +82,9 @@
 				ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */,
 				ED4AD5512A7799EC00922860 /* Main.storyboard */,
 				ED885F132A77A852001BD107 /* Global */,
-				ED4AD5752A77A5B100922860 /* Search */,
-				ED4AD56F2A77A37400922860 /* Detail */,
-				ED4AD5652A779A6900922860 /* Bookshelf */,
+				ED4AD5652A779A6900922860 /* BookshelfView */,
+				ED4AD5752A77A5B100922860 /* SearchView */,
+				ED4AD56F2A77A37400922860 /* DetailView */,
 				ED4AD5542A7799ED00922860 /* Assets.xcassets */,
 				ED4AD5562A7799ED00922860 /* LaunchScreen.storyboard */,
 				ED4AD5592A7799ED00922860 /* Info.plist */,
@@ -92,14 +92,14 @@
 			path = BookWarm;
 			sourceTree = "<group>";
 		};
-		ED4AD5652A779A6900922860 /* Bookshelf */ = {
+		ED4AD5652A779A6900922860 /* BookshelfView */ = {
 			isa = PBXGroup;
 			children = (
 				ED4AD56C2A77A2F700922860 /* Model */,
 				ED4AD56D2A77A30100922860 /* ViewController */,
 				ED4AD56E2A77A30E00922860 /* Views */,
 			);
-			path = Bookshelf;
+			path = BookshelfView;
 			sourceTree = "<group>";
 		};
 		ED4AD56C2A77A2F700922860 /* Model */ = {
@@ -128,13 +128,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		ED4AD56F2A77A37400922860 /* Detail */ = {
+		ED4AD56F2A77A37400922860 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
 				ED4AD5702A77A37F00922860 /* DetailViewController.swift */,
 				ED4161CD2A78EE0800366EB6 /* Detail.storyboard */,
 			);
-			path = Detail;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		ED4AD5722A77A47C00922860 /* Extension */ = {
@@ -146,12 +146,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		ED4AD5752A77A5B100922860 /* Search */ = {
+		ED4AD5752A77A5B100922860 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
 				ED4AD5762A77A5C700922860 /* SearchViewController.swift */,
 			);
-			path = Search;
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		ED885F132A77A852001BD107 /* Global */ = {

@@ -24,6 +24,14 @@ final class BookshelfCollectionViewController: UICollectionViewController {
         configureNavigationItems()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+    }
+    
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(
             name: StroyboardNames.detail,
