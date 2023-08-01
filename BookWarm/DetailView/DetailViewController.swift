@@ -30,6 +30,7 @@ final class DetailViewController: UIViewController {
         postImageView.layer.cornerRadius = 4.0
         
         bottomBackgroundView.layer.cornerRadius = 16.0
+        bottomBackgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         bottomBackgroundView.clipsToBounds = true
         bottomBackgroundView.backgroundColor = .white
         
