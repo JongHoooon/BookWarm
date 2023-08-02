@@ -14,8 +14,10 @@ struct Movie {
     let overview: String
     let rate: Double
     var isLiked: Bool
-    var backgroundColor: UIColor?
-    
+    var backgroundColor: BWColor
+}
+
+extension Movie {
     var trimedReleaseDate: String {
         return releaseDate
             .split(separator: ".")

@@ -63,6 +63,6 @@ private extension DetailViewController {
         rateLabel.text = "평균 ★ \(movie.rate)"
         overViewLabel.text = movie.overview
         title = movie.title
-        view.backgroundColor = movie.backgroundColor
+        view.backgroundColor = movie.backgroundColor.color
     }
 }

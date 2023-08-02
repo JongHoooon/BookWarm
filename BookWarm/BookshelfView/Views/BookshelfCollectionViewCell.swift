@@ -31,7 +31,6 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
         relaeseDateLabel.text = movie.trimedReleaseDate
         movieImageView.image = UIImage(named: "\(movie.title)")
         likeButton.setImage(movie.likeImage, for: .normal)
-        contentView.backgroundColor = movie.backgroundColor
+        contentView.backgroundColor = movie.backgroundColor.color
     }
-    
 }
