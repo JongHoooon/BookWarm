@@ -8,7 +8,7 @@
 import UIKit
 
 enum BWColor: CaseIterable {
-    case label
+    case black
     case brown
     case green
     case cyan
@@ -22,7 +22,7 @@ enum BWColor: CaseIterable {
     
     var color: UIColor {
         switch self {
-        case .label:            return .label
+        case .black:            return .black
         case .brown:            return .brown
         case .green:            return .green
         case .cyan:             return .cyan

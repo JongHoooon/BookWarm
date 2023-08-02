@@ -22,8 +22,7 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     
     private func configureBackground() {
         backgroundColor = .clear
-        contentView.layer.cornerRadius = 16.0
-        contentView.clipsToBounds = true
+        contentView.configureCornerRadius(16.0)
     }
     
     func configureMovieCell(item movie: Movie) {

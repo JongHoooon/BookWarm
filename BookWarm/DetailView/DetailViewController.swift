@@ -31,6 +31,20 @@ final class DetailViewController: UIViewController {
         configureMovie()
     }
     
+    func configureDismissButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: BWImageNames.System.xmark),
+            style: .plain,
+            target: self,
+            action: #selector(dismissView)
+        )
+    }
+    
+    @objc
+    func dismissView() {
+        dismiss(animated: true)
+    }
+    
 }
 
 // MARK: - Private Method
@@ -38,7 +52,7 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     
     func configureUI() {
-        postImageView.layer.cornerRadius = 4.0
+        postImageView.configureCornerRadius(4.0)
         
         bottomBackgroundView.layer.cornerRadius = 16.0
         bottomBackgroundView.layer.maskedCorners = [

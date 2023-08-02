@@ -11,6 +11,14 @@
 		ED4161D02A78F7A600366EB6 /* StroyboardNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */; };
 		ED4161D72A7A198B00366EB6 /* BWColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161D62A7A198B00366EB6 /* BWColors.swift */; };
 		ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */; };
+		ED4161DE2A7A262E00366EB6 /* LookAround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */; };
+		ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */; };
+		ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */; };
+		ED46270E2A7A2C7F005F453C /* LookAroundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED46270C2A7A2C7F005F453C /* LookAroundTableViewCell.xib */; };
+		ED4627102A7A2E92005F453C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */; };
+		ED4627132A7A33BA005F453C /* LookAroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4627112A7A33BA005F453C /* LookAroundCollectionViewCell.swift */; };
+		ED4627142A7A33BA005F453C /* LookAroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4627122A7A33BA005F453C /* LookAroundCollectionViewCell.xib */; };
+		ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4627152A7A37E8005F453C /* UIView+Extension.swift */; };
 		ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD54B2A7799EC00922860 /* AppDelegate.swift */; };
 		ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */; };
 		ED4AD5532A7799EC00922860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4AD5512A7799EC00922860 /* Main.storyboard */; };
@@ -33,6 +41,14 @@
 		ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyboardNames.swift; sourceTree = "<group>"; };
 		ED4161D62A7A198B00366EB6 /* BWColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWColors.swift; sourceTree = "<group>"; };
 		ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookshelf.storyboard; sourceTree = "<group>"; };
+		ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookAround.storyboard; sourceTree = "<group>"; };
+		ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundViewController.swift; sourceTree = "<group>"; };
+		ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundTableViewCell.swift; sourceTree = "<group>"; };
+		ED46270C2A7A2C7F005F453C /* LookAroundTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookAroundTableViewCell.xib; sourceTree = "<group>"; };
+		ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		ED4627112A7A33BA005F453C /* LookAroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED4627122A7A33BA005F453C /* LookAroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookAroundCollectionViewCell.xib; sourceTree = "<group>"; };
+		ED4627152A7A37E8005F453C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		ED4AD5482A7799EC00922860 /* BookWarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4AD54B2A7799EC00922860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +79,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED4161DA2A7A25D400366EB6 /* LookAroundView */ = {
+			isa = PBXGroup;
+			children = (
+				ED4161DB2A7A261300366EB6 /* ViewController */,
+				ED4161DC2A7A261A00366EB6 /* View */,
+			);
+			path = LookAroundView;
+			sourceTree = "<group>";
+		};
+		ED4161DB2A7A261300366EB6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ED4161DC2A7A261A00366EB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */,
+				ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */,
+				ED46270C2A7A2C7F005F453C /* LookAroundTableViewCell.xib */,
+				ED4627112A7A33BA005F453C /* LookAroundCollectionViewCell.swift */,
+				ED4627122A7A33BA005F453C /* LookAroundCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ED4AD53F2A7799EC00922860 = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +129,9 @@
 			children = (
 				ED4AD54B2A7799EC00922860 /* AppDelegate.swift */,
 				ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */,
-				ED4AD5512A7799EC00922860 /* Main.storyboard */,
 				ED885F132A77A852001BD107 /* Global */,
+				ED4AD5512A7799EC00922860 /* Main.storyboard */,
+				ED4161DA2A7A25D400366EB6 /* LookAroundView */,
 				ED4AD5652A779A6900922860 /* BookshelfView */,
 				ED4AD5752A77A5B100922860 /* SearchView */,
 				ED4AD56F2A77A37400922860 /* DetailView */,
@@ -127,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */,
-				ED4AD5602A779A2C00922860 /* BookshelfCollectionViewCell.xib */,
 				ED4AD55F2A779A2C00922860 /* BookshelfCollectionViewCell.swift */,
+				ED4AD5602A779A2C00922860 /* BookshelfCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,8 +191,10 @@
 		ED4AD5722A77A47C00922860 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */,
 				ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */,
+				ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */,
+				ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */,
+				ED4627152A7A37E8005F453C /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -229,11 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */,
+				ED4627142A7A33BA005F453C /* LookAroundCollectionViewCell.xib in Resources */,
 				ED4AD5622A779A2C00922860 /* BookshelfCollectionViewCell.xib in Resources */,
 				ED4AD5582A7799ED00922860 /* LaunchScreen.storyboard in Resources */,
 				ED4AD5552A7799ED00922860 /* Assets.xcassets in Resources */,
 				ED4161CE2A78EE0800366EB6 /* Detail.storyboard in Resources */,
+				ED46270E2A7A2C7F005F453C /* LookAroundTableViewCell.xib in Resources */,
 				ED4AD5532A7799EC00922860 /* Main.storyboard in Resources */,
+				ED4161DE2A7A262E00366EB6 /* LookAround.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +297,9 @@
 			files = (
 				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
 				ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */,
+				ED4627132A7A33BA005F453C /* LookAroundCollectionViewCell.swift in Sources */,
 				ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */,
+				ED4627102A7A2E92005F453C /* UITableViewCell+Extension.swift in Sources */,
 				ED4161D72A7A198B00366EB6 /* BWColors.swift in Sources */,
 				ED4AD56A2A77A0B100922860 /* Movie.swift in Sources */,
 				ED4AD5612A779A2C00922860 /* BookshelfCollectionViewCell.swift in Sources */,
@@ -254,8 +307,11 @@
 				ED4AD5642A779A6300922860 /* BookshelfCollectionViewController.swift in Sources */,
 				ED4AD5672A779DF600922860 /* UICollectionViewCell+Extension.swift in Sources */,
 				ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */,
+				ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */,
+				ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,
 				ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */,
+				ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
