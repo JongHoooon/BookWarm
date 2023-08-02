@@ -10,6 +10,7 @@
 		ED4161CE2A78EE0800366EB6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161CD2A78EE0800366EB6 /* Detail.storyboard */; };
 		ED4161D02A78F7A600366EB6 /* StroyboardNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */; };
 		ED4161D72A7A198B00366EB6 /* BWColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161D62A7A198B00366EB6 /* BWColors.swift */; };
+		ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */; };
 		ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD54B2A7799EC00922860 /* AppDelegate.swift */; };
 		ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */; };
 		ED4AD5532A7799EC00922860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4AD5512A7799EC00922860 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		ED4161CD2A78EE0800366EB6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyboardNames.swift; sourceTree = "<group>"; };
 		ED4161D62A7A198B00366EB6 /* BWColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWColors.swift; sourceTree = "<group>"; };
+		ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookshelf.storyboard; sourceTree = "<group>"; };
 		ED4AD5482A7799EC00922860 /* BookWarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4AD54B2A7799EC00922860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		ED4AD56E2A77A30E00922860 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */,
 				ED4AD5602A779A2C00922860 /* BookshelfCollectionViewCell.xib */,
 				ED4AD55F2A779A2C00922860 /* BookshelfCollectionViewCell.swift */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */,
 				ED4AD5622A779A2C00922860 /* BookshelfCollectionViewCell.xib in Resources */,
 				ED4AD5582A7799ED00922860 /* LaunchScreen.storyboard in Resources */,
 				ED4AD5552A7799ED00922860 /* Assets.xcassets in Resources */,
