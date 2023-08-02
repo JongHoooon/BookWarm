@@ -31,6 +31,14 @@ final class DetailViewController: UIViewController {
         configureMovie()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.label
+        ]
+    }
+    
     func configureDismissButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: BWImageNames.System.xmark),
