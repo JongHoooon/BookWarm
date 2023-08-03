@@ -23,16 +23,14 @@ final class LookAroundViewController: UIViewController {
         
         registerCell()
         configureTableView()
-        configureCollectionView()
+        configureCollectionViewLayout()
         configureNavigationBar()
     }
     
 }
 
-// MARK: - Private Method
-
-private extension LookAroundViewController {
-    
+extension LookAroundViewController: CollectionViewConfigureProtocol,
+                                    TableViewConfigureProtocol {
     func registerCell() {
         let tableViewNib = UINib(
             nibName: LookAroundTableViewCell.identifier,
@@ -53,17 +51,12 @@ private extension LookAroundViewController {
         )
     }
     
-    func configureTableView() {
-        lookAroundTableView.delegate = self
-        lookAroundTableView.dataSource = self
-        
-        lookAroundTableView.rowHeight = 124.0
-    }
-    
     func configureCollectionView() {
         lookAroundCollectionView.delegate = self
         lookAroundCollectionView.dataSource = self
-        
+    }
+    
+    func configureCollectionViewLayout() {
         lookAroundCollectionView.showsHorizontalScrollIndicator = false
         
         let layout = UICollectionViewFlowLayout()
@@ -81,6 +74,69 @@ private extension LookAroundViewController {
         layout.minimumLineSpacing = 20.0
         lookAroundCollectionView.collectionViewLayout = layout
     }
+    
+    func configureTableView() {
+        lookAroundTableView.delegate = self
+        lookAroundTableView.dataSource = self
+        
+        lookAroundTableView.rowHeight = 124.0
+    }
+}
+
+// MARK: - Private Method
+
+private extension LookAroundViewController {
+    
+    /*
+    func registerCell() {
+        let tableViewNib = UINib(
+            nibName: LookAroundTableViewCell.identifier,
+            bundle: nil
+        )
+        lookAroundTableView.register(
+            tableViewNib,
+            forCellReuseIdentifier: LookAroundTableViewCell.identifier
+        )
+
+        let collectionViewNib = UINib(
+            nibName: LookAroundCollectionViewCell.identifier,
+            bundle: nil
+        )
+        lookAroundCollectionView.register(
+            collectionViewNib,
+            forCellWithReuseIdentifier: LookAroundCollectionViewCell.identifier
+        )
+    }
+    
+    func configureTableView() {
+        lookAroundTableView.delegate = self
+        lookAroundTableView.dataSource = self
+
+        lookAroundTableView.rowHeight = 124.0
+    }
+    
+    func configureCollectionViewLayout() {
+        lookAroundCollectionView.delegate = self
+        lookAroundCollectionView.dataSource = self
+
+        lookAroundCollectionView.showsHorizontalScrollIndicator = false
+
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(
+            width: 146.0 * (2/3),
+            height: 146.0
+        )
+        layout.sectionInset = UIEdgeInsets(
+            top: 0,
+            left: 20.0,
+            bottom: 0,
+            right: 20.0
+        )
+        layout.minimumLineSpacing = 20.0
+        lookAroundCollectionView.collectionViewLayout = layout
+    }
+     */
     
     func configureNavigationBar() {
         navigationItem.title = "둘러보기"

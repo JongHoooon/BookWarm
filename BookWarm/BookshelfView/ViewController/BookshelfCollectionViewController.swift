@@ -48,10 +48,42 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
 }
 
+extension BookshelfCollectionViewController: CollectionViewConfigureProtocol {
+    func registerCell() {
+        
+        let nib = UINib(
+            nibName: BookshelfCollectionViewCell.identifier,
+            bundle: nil
+        )
+        collectionView.register(
+            nib,
+            forCellWithReuseIdentifier: BookshelfCollectionViewCell.identifier
+        )
+    }
+        
+    func configureCollectionViewLayout() {
+        let layout = UICollectionViewFlowLayout()
+        
+        let width: CGFloat = (UIScreen.main.bounds.width - 20.0 * 3) / 2.0
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.sectionInset = UIEdgeInsets(
+            top: 20.0,
+            left: 20.0,
+            bottom: 20.0,
+            right: 20.0
+        )
+        layout.minimumInteritemSpacing = 20.0
+        layout.minimumLineSpacing = 20.0
+        
+        collectionView.collectionViewLayout = layout
+    }
+}
+
 // MARK: - Private Method
 
 private extension BookshelfCollectionViewController {
     
+    /*
     func registerCell() {
         
         let nib = UINib(
@@ -80,6 +112,7 @@ private extension BookshelfCollectionViewController {
         
         collectionView.collectionViewLayout = layout
     }
+     */
     
     func configureNavigationItems() {
         title = "brick의 책장"

@@ -13,6 +13,8 @@
 		ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */; };
 		ED4161DE2A7A262E00366EB6 /* LookAround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */; };
 		ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */; };
+		ED44D50C2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */; };
+		ED44D50E2A7BEC1100582E49 /* TableViewConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */; };
 		ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */; };
 		ED46270E2A7A2C7F005F453C /* LookAroundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED46270C2A7A2C7F005F453C /* LookAroundTableViewCell.xib */; };
 		ED4627102A7A2E92005F453C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */; };
@@ -43,6 +45,8 @@
 		ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookshelf.storyboard; sourceTree = "<group>"; };
 		ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookAround.storyboard; sourceTree = "<group>"; };
 		ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundViewController.swift; sourceTree = "<group>"; };
+		ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewConfigureProtocol.swift; sourceTree = "<group>"; };
+		ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigureProtocol.swift; sourceTree = "<group>"; };
 		ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundTableViewCell.swift; sourceTree = "<group>"; };
 		ED46270C2A7A2C7F005F453C /* LookAroundTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookAroundTableViewCell.xib; sourceTree = "<group>"; };
 		ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 				ED4627122A7A33BA005F453C /* LookAroundCollectionViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ED44D50A2A7BEB4500582E49 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */,
+				ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		ED4AD53F2A7799EC00922860 = {
@@ -210,6 +223,7 @@
 		ED885F132A77A852001BD107 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				ED44D50A2A7BEB4500582E49 /* Protocol */,
 				ED4AD5722A77A47C00922860 /* Extension */,
 				ED885F142A77A860001BD107 /* BWImageNames.swift */,
 				ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */,
@@ -307,12 +321,14 @@
 				ED4AD5642A779A6300922860 /* BookshelfCollectionViewController.swift in Sources */,
 				ED4AD5672A779DF600922860 /* UICollectionViewCell+Extension.swift in Sources */,
 				ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */,
+				ED44D50E2A7BEC1100582E49 /* TableViewConfigureProtocol.swift in Sources */,
 				ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */,
 				ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,
 				ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */,
 				ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,
+				ED44D50C2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
