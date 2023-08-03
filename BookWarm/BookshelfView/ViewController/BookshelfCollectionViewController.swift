@@ -86,6 +86,7 @@ private extension BookshelfCollectionViewController {
         navigationItem.backButtonTitle = ""
         
         navigationItem.titleView = searchBar
+        searchBar.tintColor = .label
     }
     
     @objc
