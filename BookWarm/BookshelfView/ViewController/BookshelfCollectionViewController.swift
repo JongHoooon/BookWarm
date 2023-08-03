@@ -10,24 +10,33 @@ import UIKit
 
 final class BookshelfCollectionViewController: UICollectionViewController {
     
-    private var movies = MovieInfo().movies {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    // MARK: - Properties
+    
+    private var movies = MovieInfo().movies
+    
+    private var movieSearched = MovieInfo().movies
+    
+    // MARK: - UI
+    
+    let searchBar = UISearchBar()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        collectionView.keyboardDismissMode = .onDrag
         
         registerCell()
         configureCollectionViewLayout()
         configureNavigationItems()
     }
     
+    
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(
-            name: StroyboardNames.main
-            ,
+            name: StroyboardNames.main,
             bundle: nil
         )
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
@@ -75,11 +84,21 @@ private extension BookshelfCollectionViewController {
     func configureNavigationItems() {
         title = "brick의 책장"
         navigationItem.backButtonTitle = ""
+        
+        navigationItem.titleView = searchBar
     }
     
     @objc
     func likeButtonTapped(_ sender: UIButton) {
-        movies[sender.tag].isLiked.toggle()
+        movieSearched[sender.tag].isLiked.toggle()
+        UIView.performWithoutAnimation {
+            collectionView.reloadItems(at: [IndexPath(item: sender.tag, section: 0)])
+        }
+        
+        let tappedMovie = movieSearched[sender.tag]
+        if let tappedIndex = movies.firstIndex(where: { $0.title == tappedMovie.title }) {
+            movies[tappedIndex].isLiked.toggle()
+        }
     }
 }
 
@@ -92,7 +111,7 @@ extension BookshelfCollectionViewController {
         numberOfItemsInSection section: Int
     ) -> Int {
         
-        return movies.count
+        return movieSearched.count
     }
     
     override func collectionView(
@@ -105,7 +124,7 @@ extension BookshelfCollectionViewController {
             for: indexPath
         ) as! BookshelfCollectionViewCell
         
-        let item = movies[indexPath.item]
+        let item = movieSearched[indexPath.item]
         cell.configureMovieCell(item: item)
         cell.likeButton.tag = indexPath.item
         cell.likeButton.addTarget(
@@ -124,8 +143,27 @@ extension BookshelfCollectionViewController {
         let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.movie = movies[indexPath.item]
+        vc.movie = movieSearched[indexPath.item]
         
         navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+// MARK: - Search Bar
+
+extension BookshelfCollectionViewController: UISearchBarDelegate {
+    
+    func searchBar(
+        _ searchBar: UISearchBar,
+        textDidChange searchText: String
+    ) {
+        guard let text = searchBar.text else { return }
+        
+        movieSearched = text.isEmpty ?
+            movies :
+            movies.filter { $0.title.contains(text) }
+        
+        collectionView.reloadData()
+    }
+    
 }
