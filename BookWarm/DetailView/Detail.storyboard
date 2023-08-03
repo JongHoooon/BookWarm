@@ -40,18 +40,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sf-ga-l5G">
-                                        <rect key="frame" x="16" y="105" width="361" height="267.33333333333331"/>
-                                        <mutableString key="text">꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한</mutableString>
+                                        <rect key="frame" x="16" y="105.00000000000001" width="361" height="170.33333333333337"/>
+                                        <string key="text">꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한꼼꼼한</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Y-0f-1xh">
+                                        <rect key="frame" x="16" y="291.33333333333337" width="361" height="242.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="BMY-R7-I4W" firstAttribute="top" secondItem="Lca-re-J2b" secondAttribute="bottom" constant="16" id="DZ0-mD-ysj"/>
+                                    <constraint firstItem="Q1Y-0f-1xh" firstAttribute="leading" secondItem="4YJ-U2-jbf" secondAttribute="leading" constant="16" id="LUB-ri-skT"/>
                                     <constraint firstItem="BMY-R7-I4W" firstAttribute="leading" secondItem="4YJ-U2-jbf" secondAttribute="leading" constant="16" id="QWb-Vc-jqU"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Sf-ga-l5G" secondAttribute="bottom" constant="16" id="Re5-24-u5g"/>
+                                    <constraint firstItem="6Sf-ga-l5G" firstAttribute="height" relation="lessThanOrEqual" secondItem="4YJ-U2-jbf" secondAttribute="height" multiplier="0.3" id="VMb-lf-Zwq"/>
+                                    <constraint firstItem="Q1Y-0f-1xh" firstAttribute="top" secondItem="6Sf-ga-l5G" secondAttribute="bottom" constant="16" id="XR9-in-zku"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q1Y-0f-1xh" secondAttribute="trailing" constant="16" id="XaB-OF-Xw2"/>
                                     <constraint firstAttribute="trailing" secondItem="Lca-re-J2b" secondAttribute="trailing" id="ezM-BB-v2B"/>
                                     <constraint firstItem="6Sf-ga-l5G" firstAttribute="leading" secondItem="4YJ-U2-jbf" secondAttribute="leading" constant="16" id="g4G-13-p3F"/>
                                     <constraint firstItem="jLr-Df-9cS" firstAttribute="top" secondItem="4YJ-U2-jbf" secondAttribute="top" constant="16" id="lD4-uI-z54"/>
@@ -85,6 +95,7 @@
                         <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstItem="QfR-Su-x5s" firstAttribute="leading" secondItem="XDr-of-jyB" secondAttribute="trailing" constant="16" id="1R1-6a-9Xc"/>
+                            <constraint firstItem="2ad-Mv-x06" firstAttribute="bottom" secondItem="Q1Y-0f-1xh" secondAttribute="bottom" id="5Ro-QF-OfX"/>
                             <constraint firstItem="QfR-Su-x5s" firstAttribute="top" secondItem="oKE-MM-qKV" secondAttribute="bottom" constant="4" id="8lC-gK-NKd"/>
                             <constraint firstItem="4YJ-U2-jbf" firstAttribute="top" secondItem="XDr-of-jyB" secondAttribute="bottom" constant="16" id="Agv-N5-QyP"/>
                             <constraint firstItem="4YJ-U2-jbf" firstAttribute="trailing" secondItem="2ad-Mv-x06" secondAttribute="trailing" id="BJk-o7-9oV"/>
@@ -100,6 +111,7 @@
                     <connections>
                         <outlet property="bottomBackgroundView" destination="4YJ-U2-jbf" id="RzX-eA-bj7"/>
                         <outlet property="infoLabel" destination="QfR-Su-x5s" id="TIe-Pu-AJc"/>
+                        <outlet property="memoTextView" destination="Q1Y-0f-1xh" id="Oe9-lI-OP4"/>
                         <outlet property="overViewLabel" destination="6Sf-ga-l5G" id="FHC-FG-WrE"/>
                         <outlet property="postImageView" destination="XDr-of-jyB" id="Gbr-oI-7Ng"/>
                         <outlet property="rateLabel" destination="jLr-Df-9cS" id="BfD-qR-zcV"/>
@@ -112,6 +124,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

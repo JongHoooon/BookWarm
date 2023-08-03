@@ -12,20 +12,24 @@ final class DetailViewController: UIViewController {
     // MARK: - Properties
     
     var movie: Movie?
-    
+    private let placeholderText = "내용을 입력해주세요."
+
     // MARK: - UI
     
-    @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var overViewLabel: UILabel!
-    @IBOutlet weak var bottomBackgroundView: UIView!
+    @IBOutlet weak private var postImageView: UIImageView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var infoLabel: UILabel!
+    @IBOutlet weak private var rateLabel: UILabel!
+    @IBOutlet weak private var overViewLabel: UILabel!
+    @IBOutlet weak private var memoTextView: UITextView!
+    @IBOutlet weak private var bottomBackgroundView: UIView!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        memoTextView.delegate = self
         
         configureUI()
         configureMovie()
@@ -53,6 +57,9 @@ final class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - Private Method
@@ -74,6 +81,12 @@ private extension DetailViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
+        
+        memoTextView.layer.borderColor = UIColor.lightGray.cgColor
+        memoTextView.layer.borderWidth = 0.5
+        memoTextView.configureCornerRadius(8.0)
+        memoTextView.textColor = .lightGray
+        memoTextView.text = placeholderText
     }
     
     func configureMovie() {
@@ -87,4 +100,22 @@ private extension DetailViewController {
         title = movie.title
         view.backgroundColor = movie.backgroundColor.color
     }
+}
+
+extension DetailViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholderText {
+            textView.text = nil
+            textView.textColor = .label
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholderText
+            textView.textColor = .lightGray
+        }
+    }
+    
 }

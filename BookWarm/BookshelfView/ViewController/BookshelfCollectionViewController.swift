@@ -18,7 +18,7 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     // MARK: - UI
     
-    let searchBar = UISearchBar()
+    private let searchBar = UISearchBar()
     
     // MARK: - Lifecycle
     
