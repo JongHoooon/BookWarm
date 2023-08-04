@@ -23,6 +23,7 @@ final class LookAroundViewController: UIViewController {
         
         registerCell()
         configureTableView()
+        configureCollectionView()
         configureCollectionViewLayout()
         configureNavigationBar()
     }
