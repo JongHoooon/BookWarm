@@ -38,6 +38,7 @@
 		ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImageNames.swift */; };
 		ED9214172A821153008E7766 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED9214162A821153008E7766 /* .gitignore */; };
 		ED9214192A8211A5008E7766 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9214182A8211A5008E7766 /* APIKey.swift */; };
+		ED92141B2A82132C008E7766 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED92141A2A82132C008E7766 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		ED885F142A77A860001BD107 /* BWImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImageNames.swift; sourceTree = "<group>"; };
 		ED9214162A821153008E7766 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		ED9214182A8211A5008E7766 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		ED92141A2A82132C008E7766 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				ED4AD5682A77A0B100922860 /* Movie.swift */,
 				ED4AD5692A77A0B100922860 /* MovieInfo.swift */,
+				ED92141A2A82132C008E7766 /* Book.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				ED4AD5672A779DF600922860 /* UICollectionViewCell+Extension.swift in Sources */,
 				ED4AD54C2A7799EC00922860 /* AppDelegate.swift in Sources */,
 				ED44D50E2A7BEC1100582E49 /* TableViewConfigureProtocol.swift in Sources */,
+				ED92141B2A82132C008E7766 /* Book.swift in Sources */,
 				ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */,
 				ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,

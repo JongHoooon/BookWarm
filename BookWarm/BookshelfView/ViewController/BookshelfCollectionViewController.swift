@@ -39,7 +39,24 @@ final class BookshelfCollectionViewController: UICollectionViewController {
             name: StroyboardNames.main,
             bundle: nil
         )
-        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
+        
+        guard let query = searchBar.text, query.count > 0 else {
+            let alert = UIAlertController(
+                title: nil,
+                message: "한 글자 이상 입력해 주세요!",
+                preferredStyle: .alert
+            )
+            let action = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true)
+            
+            return
+        }
+        
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
+        
+        vc.query = query
+        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         
@@ -120,6 +137,7 @@ private extension BookshelfCollectionViewController {
         
         navigationItem.titleView = searchBar
         searchBar.tintColor = .label
+        searchBar.placeholder = "검색어를 입력해주세요."
     }
     
     @objc
