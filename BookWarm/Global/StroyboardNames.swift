@@ -8,4 +8,5 @@
 enum StroyboardNames {
     static let main = "Main"
     static let detail = "Detail"
+    static let search = "Search"
 }

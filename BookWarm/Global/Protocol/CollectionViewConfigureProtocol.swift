@@ -9,7 +9,7 @@ import UIKit
 
 @objc
 protocol CollectionViewConfigureProtocol: AnyObject {
-    func registerCell()
+    @objc optional func registerCell()
     @objc optional func configureCollectionView()
     func configureCollectionViewLayout()
 }

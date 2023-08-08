@@ -13,5 +13,6 @@ enum BWImageNames {
         
         static let heart = "heart"
         static let heartFill = "heart.fill"
+        static let book = "book"
     }
 }

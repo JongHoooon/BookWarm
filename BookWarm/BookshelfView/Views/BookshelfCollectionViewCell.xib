@@ -17,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="294" height="249"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암살" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-8L-WA5">
-                        <rect key="frame" x="16" y="15.999999999999998" width="28" height="19.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암살" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-8L-WA5">
+                        <rect key="frame" x="16" y="15.999999999999998" width="258" height="19.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -48,6 +48,7 @@
             <constraints>
                 <constraint firstItem="whc-NI-QWV" firstAttribute="top" secondItem="ud9-Zv-rtj" secondAttribute="bottom" constant="8" id="4tz-eC-QLo"/>
                 <constraint firstItem="whc-NI-QWV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="EHB-UD-NWP"/>
+                <constraint firstAttribute="trailing" secondItem="Exw-8L-WA5" secondAttribute="trailing" constant="20" id="PGT-cf-iRs"/>
                 <constraint firstAttribute="bottom" secondItem="AC9-Iv-3Hv" secondAttribute="bottom" id="POq-Yr-hal"/>
                 <constraint firstAttribute="bottom" secondItem="whc-NI-QWV" secondAttribute="bottom" constant="20" id="UVh-19-bRs"/>
                 <constraint firstAttribute="trailing" secondItem="AC9-Iv-3Hv" secondAttribute="trailing" constant="20" id="UzU-FC-8cD"/>
