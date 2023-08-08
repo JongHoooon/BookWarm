@@ -36,6 +36,8 @@
 		ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */; };
 		ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5762A77A5C700922860 /* SearchViewController.swift */; };
 		ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImageNames.swift */; };
+		ED9214172A821153008E7766 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED9214162A821153008E7766 /* .gitignore */; };
+		ED9214192A8211A5008E7766 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9214182A8211A5008E7766 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		ED4AD5762A77A5C700922860 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED885F142A77A860001BD107 /* BWImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImageNames.swift; sourceTree = "<group>"; };
+		ED9214162A821153008E7766 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		ED9214182A8211A5008E7766 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 				ED4AD5542A7799ED00922860 /* Assets.xcassets */,
 				ED4AD5562A7799ED00922860 /* LaunchScreen.storyboard */,
 				ED4AD5592A7799ED00922860 /* Info.plist */,
+				ED9214162A821153008E7766 /* .gitignore */,
 			);
 			path = BookWarm;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				ED885F142A77A860001BD107 /* BWImageNames.swift */,
 				ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */,
 				ED4161D62A7A198B00366EB6 /* BWColors.swift */,
+				ED9214182A8211A5008E7766 /* APIKey.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9214172A821153008E7766 /* .gitignore in Resources */,
 				ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */,
 				ED4627142A7A33BA005F453C /* LookAroundCollectionViewCell.xib in Resources */,
 				ED4AD5622A779A2C00922860 /* BookshelfCollectionViewCell.xib in Resources */,
@@ -310,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
+				ED9214192A8211A5008E7766 /* APIKey.swift in Sources */,
 				ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */,
 				ED4627132A7A33BA005F453C /* LookAroundCollectionViewCell.swift in Sources */,
 				ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */,
