@@ -9,5 +9,5 @@ import UIKit
 
 protocol TableViewConfigureProtocol: AnyObject {
     func registerCell()
-    func configureCollectionViewLayout()
+    func configureTableView()
 }
