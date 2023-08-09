@@ -10,11 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController, Alertable {
 
     // MARK: - Properties
     
-    var searchedBooks: [Book] = []
+    private var searchedBooks: [Book] = []
     
     // MARK: - UI
         
@@ -102,19 +102,29 @@ extension SearchViewController: CollectionViewConfigureProtocol {
     
 }
 
+// MARK: - Search Bar
+
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text,
+              query.count > 0 else {
+            presnetSimpleAlert(message: "한 글자 이상 입력해 주세요!")
+            return
+        }
         
+        callRequest(query: query)
     }
     
 }
 
+// MARK: - Private Method
+
 private extension SearchViewController {
     
-    func callRequest() {
+    func callRequest(query: String) {
         
-        let url = "https://dapi.kakao.com/v3/search/book?query="
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)"
         let headers: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
         
         AF.request(
@@ -141,7 +151,7 @@ private extension SearchViewController {
                 
                 self?.searchedBooks = books
                 self?.searchCollectionView.reloadData()
-                 
+                
             case .failure(let error):
                 print(error)
             }

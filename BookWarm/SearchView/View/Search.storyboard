@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--검색-->
         <scene sceneID="S0E-Kh-jxe">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="dDo-9U-ZTI" customClass="SearchViewController" customModule="BookWarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-kR-xEb">
-                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iy4-HI-2QO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -47,7 +47,9 @@
                             <constraint firstItem="kdZ-fg-xUi" firstAttribute="top" secondItem="XYc-8a-4tt" secondAttribute="top" id="p91-hW-goh"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="2wM-q0-5Jp"/>
                     <navigationItem key="navigationItem" id="rAd-wg-fb9"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="kdZ-fg-xUi" id="kq3-hf-xNx"/>
                         <outlet property="searchCollectionView" destination="NwB-kR-xEb" id="s0v-h4-cWV"/>
@@ -59,6 +61,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
