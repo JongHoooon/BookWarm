@@ -37,6 +37,7 @@
 		ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5762A77A5C700922860 /* SearchViewController.swift */; };
 		ED88177F2A8361550038A3D3 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88177E2A8361550038A3D3 /* UIImageView+Extension.swift */; };
 		ED8817812A8362360038A3D3 /* ImageFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8817802A8362360038A3D3 /* ImageFetchable.swift */; };
+		ED8817852A83692F0038A3D3 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8817842A83692F0038A3D3 /* Alertable.swift */; };
 		ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImageNames.swift */; };
 		ED9214172A821153008E7766 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = ED9214162A821153008E7766 /* .gitignore */; };
 		ED9214192A8211A5008E7766 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9214182A8211A5008E7766 /* APIKey.swift */; };
@@ -79,6 +80,7 @@
 		ED4AD5762A77A5C700922860 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED88177E2A8361550038A3D3 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		ED8817802A8362360038A3D3 /* ImageFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchable.swift; sourceTree = "<group>"; };
+		ED8817842A83692F0038A3D3 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		ED885F142A77A860001BD107 /* BWImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImageNames.swift; sourceTree = "<group>"; };
 		ED9214162A821153008E7766 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		ED9214182A8211A5008E7766 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */,
 				ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */,
 				ED8817802A8362360038A3D3 /* ImageFetchable.swift */,
+				ED8817842A83692F0038A3D3 /* Alertable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,
 				ED44D50C2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift in Sources */,
+				ED8817852A83692F0038A3D3 /* Alertable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
