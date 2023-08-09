@@ -26,7 +26,6 @@ final class BookshelfCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        searchBar.searchTextField.delegate = self
         collectionView.keyboardDismissMode = .onDrag
         
         registerCell()
@@ -121,20 +120,6 @@ private extension BookshelfCollectionViewController {
             name: StroyboardNames.search,
             bundle: nil
         )
-        
-        guard let query = searchBar.text, query.count > 0 else {
-            let alert = UIAlertController(
-                title: nil,
-                message: "한 글자 이상 입력해 주세요!",
-                preferredStyle: .alert
-            )
-            let action = UIAlertAction(title: "확인", style: .default)
-            alert.addAction(action)
-            present(alert, animated: true)
-            
-            return
-        }
-        
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
         
         let nav = UINavigationController(rootViewController: vc)
@@ -221,15 +206,4 @@ extension BookshelfCollectionViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
     
-}
-
-extension BookshelfCollectionViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        presentSearchView()
-        
-        return true
-    }
-
 }
