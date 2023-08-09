@@ -19,6 +19,8 @@ final class SearchViewController: UIViewController {
     
     // MARK: - UI
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     // MARK: - Lifecycle

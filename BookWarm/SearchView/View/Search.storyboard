@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NwB-kR-xEb">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iy4-HI-2QO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,18 +27,29 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kdZ-fg-xUi">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dDo-9U-ZTI" id="F2u-Qg-XGT"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XYc-8a-4tt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NwB-kR-xEb" firstAttribute="leading" secondItem="XYc-8a-4tt" secondAttribute="leading" id="2TA-tp-Yam"/>
+                            <constraint firstItem="kdZ-fg-xUi" firstAttribute="trailing" secondItem="XYc-8a-4tt" secondAttribute="trailing" id="52K-jO-laQ"/>
+                            <constraint firstItem="NwB-kR-xEb" firstAttribute="top" secondItem="kdZ-fg-xUi" secondAttribute="bottom" id="6cP-Fe-40R"/>
                             <constraint firstItem="XYc-8a-4tt" firstAttribute="trailing" secondItem="NwB-kR-xEb" secondAttribute="trailing" id="7bi-0o-QOZ"/>
-                            <constraint firstItem="NwB-kR-xEb" firstAttribute="top" secondItem="XYc-8a-4tt" secondAttribute="top" id="L5j-wA-ivI"/>
+                            <constraint firstItem="kdZ-fg-xUi" firstAttribute="leading" secondItem="XYc-8a-4tt" secondAttribute="leading" id="EpD-5O-pyk"/>
                             <constraint firstItem="XYc-8a-4tt" firstAttribute="bottom" secondItem="NwB-kR-xEb" secondAttribute="bottom" id="PwU-Rf-25e"/>
+                            <constraint firstItem="kdZ-fg-xUi" firstAttribute="top" secondItem="XYc-8a-4tt" secondAttribute="top" id="p91-hW-goh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rAd-wg-fb9"/>
                     <connections>
+                        <outlet property="searchBar" destination="kdZ-fg-xUi" id="kq3-hf-xNx"/>
                         <outlet property="searchCollectionView" destination="NwB-kR-xEb" id="s0v-h4-cWV"/>
                     </connections>
                 </viewController>
