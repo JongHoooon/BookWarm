@@ -48,22 +48,39 @@ extension ImageFetchable {
 }
 
 extension ImageFetchable where Self: UIImageView {
-    func fetchImage(urlString: String) async throws {
-        guard let url = URL(string: urlString) else {
-            throw FetchImageError.noImageURL
+    func fetchImage(urlString: String,
+                    defaultImage: UIImage? = nil,
+                    backgroundColorForError: UIColor? = nil) async {
+        do {
+            guard let url = URL(string: urlString) else {
+                throw FetchImageError.noImageURL
+            }
+            
+            let (data, _) = try await URLSession.shared.data(from: url)
+            guard let image = UIImage(data: data) else {
+                throw FetchImageError.invalidData
+            }
+            
+            await setImage(with: image)
+        } catch {
+            if let defaultImage = defaultImage {
+                await setImage(with: defaultImage)
+                
+            }
+            if let backgroundColorForError = backgroundColorForError {
+                await setBackgroundColor(with: backgroundColorForError)
+            }
+            
+            FetchImageError.logError(with: error)
         }
-        
-        let (data, _) = try await URLSession.shared.data(from: url)
-        guard let image = UIImage(data: data) else {
-            throw FetchImageError.invalidData
-        }
-        
-        await setImage(with: image)
     }
 }
 
 extension UIImageView: ImageFetchable {
     func setImage(with image: UIImage) {
         self.image = image
+    }
+    func setBackgroundColor(with color: UIColor) {
+        backgroundColor = color
     }
 }

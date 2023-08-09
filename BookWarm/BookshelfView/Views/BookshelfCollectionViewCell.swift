@@ -22,6 +22,11 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
         relaeseDateLabel.textColor = .label
     }
     
+    override func prepareForReuse() {
+        movieImageView.backgroundColor = .clear
+        movieImageView.image = nil
+    }
+    
     private func configureBackground() {
         backgroundColor = .clear
         contentView.configureCornerRadius(16.0)
@@ -37,12 +42,11 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     
     func configureBookCell(item book: Book) {
         Task {
-            do {
-                try await movieImageView.fetchImage(urlString: book.thumbnail)
-            } catch {
-                FetchImageError.logError(with: error)
-                movieImageView.image = UIImage(systemName: "book.fill")
-            }
+            await movieImageView.fetchImage(
+                urlString: book.thumbnail,
+                defaultImage: UIImage(systemName: BWImageNames.System.book),
+                backgroundColorForError: .systemGray6
+            )
         }
         let releaseDateText = book.releaseDate
             .prefix(10)
@@ -53,6 +57,6 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
         relaeseDateLabel.text = releaseDateText
         titleLabel.text = book.title
         likeButton.isHidden = true
-        contentView.backgroundColor = .systemGray6
+        contentView.backgroundColor = .systemGray3
     }
 }
