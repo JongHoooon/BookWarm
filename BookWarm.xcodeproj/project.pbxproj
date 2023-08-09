@@ -35,7 +35,6 @@
 		ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5702A77A37F00922860 /* DetailViewController.swift */; };
 		ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */; };
 		ED4AD5772A77A5C700922860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD5762A77A5C700922860 /* SearchViewController.swift */; };
-		ED88177F2A8361550038A3D3 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88177E2A8361550038A3D3 /* UIImageView+Extension.swift */; };
 		ED8817812A8362360038A3D3 /* ImageFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8817802A8362360038A3D3 /* ImageFetchable.swift */; };
 		ED8817852A83692F0038A3D3 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8817842A83692F0038A3D3 /* Alertable.swift */; };
 		ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED885F142A77A860001BD107 /* BWImageNames.swift */; };
@@ -78,7 +77,6 @@
 		ED4AD5702A77A37F00922860 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ED4AD5732A77A49500922860 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		ED4AD5762A77A5C700922860 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		ED88177E2A8361550038A3D3 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		ED8817802A8362360038A3D3 /* ImageFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchable.swift; sourceTree = "<group>"; };
 		ED8817842A83692F0038A3D3 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		ED885F142A77A860001BD107 /* BWImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWImageNames.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				ED46270F2A7A2E92005F453C /* UITableViewCell+Extension.swift */,
 				ED4AD5662A779DF600922860 /* UICollectionViewCell+Extension.swift */,
 				ED4627152A7A37E8005F453C /* UIView+Extension.swift */,
-				ED88177E2A8361550038A3D3 /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -379,7 +376,6 @@
 				ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */,
 				ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,
-				ED88177F2A8361550038A3D3 /* UIImageView+Extension.swift in Sources */,
 				ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */,
 				ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,
