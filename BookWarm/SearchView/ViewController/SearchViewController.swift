@@ -30,8 +30,11 @@ final class SearchViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         registerCell()
+        searchBar.delegate = self
     }
 }
+
+// MARK: - Collection View
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(
@@ -99,6 +102,14 @@ extension SearchViewController: CollectionViewConfigureProtocol {
     
 }
 
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+}
+
 private extension SearchViewController {
     
     func callRequest() {
@@ -119,7 +130,7 @@ private extension SearchViewController {
                 
                 let books = json["documents"].arrayValue
                     .map {
-                        Book(
+                        return Book(
                             title: $0["title"].stringValue,
                             releaseDate: $0["datetime"].stringValue,
                             thumbnail: $0["thumbnail"].stringValue

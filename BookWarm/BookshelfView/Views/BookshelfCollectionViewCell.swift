@@ -37,7 +37,12 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     
     func configureBookCell(item book: Book) {
         Task {
-            movieImageView.image = try? await fetchImage(urlString: book.thumbnail)
+            do {
+                try await movieImageView.fetchImage(urlString: book.thumbnail)
+            } catch {
+                FetchImageError.logError(with: error)
+                movieImageView.image = UIImage(systemName: "book.fill")
+            }
         }
         let releaseDateText = book.releaseDate
             .prefix(10)
@@ -49,20 +54,5 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
         titleLabel.text = book.title
         likeButton.isHidden = true
         contentView.backgroundColor = .systemGray6
-    }
-    
-    private func fetchImage(urlString: String) async throws -> UIImage {
-        guard let url = URL(string: urlString) else {
-            print("잘못된 URL 입니다.")
-            return UIImage(systemName: BWImageNames.System.book) ?? UIImage()
-        }
-           
-        let (data, _) = try await URLSession.shared.data(from: url)
-        guard let image = UIImage(data: data) else {
-            print("유효하지 않은 data 입니다.")
-            return UIImage(systemName: BWImageNames.System.book) ?? UIImage()
-        }
-        
-        return image
     }
 }
