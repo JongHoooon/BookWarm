@@ -14,7 +14,14 @@ final class SearchViewController: UIViewController, Alertable {
 
     // MARK: - Properties
     
-    private var searchedBooks: [Book] = []
+    private var searchedBooks: [Book] = [] {
+        didSet {
+            searchCollectionView.reloadData()
+        }
+    }
+    private var page = 1
+    private var isEnd = false
+    private var query = ""
     
     // MARK: - UI
         
@@ -81,6 +88,7 @@ extension SearchViewController: CollectionViewConfigureProtocol {
     func configureCollectionView() {
         searchCollectionView.delegate = self
         searchCollectionView.dataSource = self
+        searchCollectionView.prefetchDataSource = self
     }
     
     func configureCollectionViewLayout() {
@@ -99,7 +107,23 @@ extension SearchViewController: CollectionViewConfigureProtocol {
         
         searchCollectionView.collectionViewLayout = layout
     }
+}
+
+extension SearchViewController: UICollectionViewDataSourcePrefetching {
     
+    func collectionView(
+        _ collectionView: UICollectionView,
+        prefetchItemsAt indexPaths: [IndexPath]
+    ) {
+        let rows = indexPaths.map { $0.row }
+        
+        if rows.contains(searchedBooks.count-1) &&
+           isEnd == false {
+            
+            page += 1
+            callRequest(query: query)
+        }
+    }
 }
 
 // MARK: - Search Bar
@@ -113,6 +137,9 @@ extension SearchViewController: UISearchBarDelegate {
             return
         }
         
+        page = 1
+        self.query = query
+        searchedBooks.removeAll()
         callRequest(query: query)
     }
     
@@ -124,7 +151,11 @@ private extension SearchViewController {
     
     func callRequest(query: String) {
         
-        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)"
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            self.presnetSimpleAlert(message: "검색어를 확인해주세요!")
+            return
+        }
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)&size=15&page=\(page)"
         let headers: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
         
         AF.request(
@@ -138,6 +169,8 @@ private extension SearchViewController {
             case .success(let value):
                 let json = JSON(value)
                 
+                self?.isEnd = json["meta"]["is_end"].boolValue
+                
                 let books = json["documents"].arrayValue
                     .map {
                         return Book(
@@ -149,8 +182,11 @@ private extension SearchViewController {
                 
                 print(books)
                 
-                self?.searchedBooks = books
-                self?.searchCollectionView.reloadData()
+                if books.isEmpty && self?.page == 1 {
+                    self?.presnetSimpleAlert(message: "검색 결과가 없습니다.")
+                } else {
+                    self?.searchedBooks.append(contentsOf: books)
+                }
                 
             case .failure(let error):
                 print(error)
