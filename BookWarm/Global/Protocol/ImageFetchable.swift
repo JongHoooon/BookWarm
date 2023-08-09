@@ -27,24 +27,9 @@ enum FetchImageError: Error {
     }
 }
 
-@objc
 protocol ImageFetchable {
-    @objc optional func setImage()
-}
-
-extension ImageFetchable {
-    private func fetchImage(urlString: String) async throws -> UIImage {
-        guard let url = URL(string: urlString) else {
-            throw FetchImageError.noImageURL
-        }
-        
-        let (data, _) = try await URLSession.shared.data(from: url)
-        guard let image = UIImage(data: data) else {
-            throw FetchImageError.invalidData
-        }
-        
-        return image
-    }
+    func setImage(with image: UIImage)
+    func setBackgroundColor(with color: UIColor)
 }
 
 extension ImageFetchable where Self: UIImageView {
