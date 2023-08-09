@@ -14,12 +14,10 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Properties
     
-    var query: String?
     var searchedBooks: [Book] = []
     
     // MARK: - UI
-    
-    
+        
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
@@ -32,9 +30,7 @@ final class SearchViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         registerCell()
-        callRequest()
     }
-
 }
 
 extension SearchViewController: UICollectionViewDataSource {
@@ -107,9 +103,7 @@ private extension SearchViewController {
     
     func callRequest() {
         
-        guard let query = query?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        
-        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)"
+        let url = "https://dapi.kakao.com/v3/search/book?query="
         let headers: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
         
         AF.request(

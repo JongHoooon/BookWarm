@@ -135,9 +135,7 @@ private extension BookshelfCollectionViewController {
             return
         }
         
-        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
-        
-        vc.query = query
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier)
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
