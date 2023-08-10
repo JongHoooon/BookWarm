@@ -41,13 +41,13 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     }
     
     func configureBookCell(item book: Book) {
-        Task {
-            await movieImageView.fetchImage(
-                urlString: book.thumbnail,
-                defaultImage: UIImage(systemName: BWImageNames.System.book),
-                backgroundColorForError: .systemGray6
-            )
-        }
+        
+        movieImageView.fetchImage(
+            urlString: book.thumbnail,
+            defaultImage: UIImage(systemName: BWImageNames.System.book),
+            backgroundColorForError: .systemGray6
+        )
+        
         let releaseDateText = book.releaseDate
             .prefix(10)
             .split(separator: "-")
