@@ -9,8 +9,25 @@ import RealmSwift
 
 struct Book {
     let title: String
-    let releaseDate: String
     let thumbnail: String
+    private let _releaseDate: String
+    var releaseDate: String {
+        return _releaseDate
+            .prefix(10)
+            .split(separator: "-")
+            .suffix(2)
+            .joined(separator: ".")
+    }
+    
+    init(
+        title: String,
+        thumbnail: String,
+        releaseDate: String
+    ) {
+        self.title = title
+        self.thumbnail = thumbnail
+        self._releaseDate = releaseDate
+    }
 }
 
 class BookTable: Object {

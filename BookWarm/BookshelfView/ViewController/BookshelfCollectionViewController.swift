@@ -178,7 +178,8 @@ extension BookshelfCollectionViewController {
         let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.movie = movieSearched[indexPath.item]
+        let item = movieSearched[indexPath.item]
+        vc.detailViewType = .movie(movie: item)
         
         navigationController?.pushViewController(vc, animated: true)
     }
