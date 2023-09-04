@@ -13,8 +13,8 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     
     private var movies = MovieInfo().movies
-    
     private var movieSearched = MovieInfo().movies
+    
     
     // MARK: - UI
     

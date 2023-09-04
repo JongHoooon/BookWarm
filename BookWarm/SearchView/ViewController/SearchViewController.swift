@@ -187,6 +187,7 @@ private extension SearchViewController {
                 let books = json["documents"].arrayValue
                     .map {
                         return Book(
+                            isbn: $0["isbn"].stringValue,
                             title: $0["title"].stringValue,
                             thumbnail: $0["thumbnail"].stringValue,
                             releaseDate: $0["datetime"].stringValue

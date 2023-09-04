@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RealmSwift
+
 enum DetailViewType {
     case movie(movie: Movie)
     case book(book: Book)
@@ -36,8 +38,11 @@ final class DetailViewController: UIViewController {
         
         memoTextView.delegate = self
         
+        configureView()
         configureUI()
-        configureMovie()
+        if case let .book(book) = detailViewType {
+            saveBook(book: book)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,13 +99,7 @@ private extension DetailViewController {
         memoTextView.text = placeholderText
     }
     
-    func configureMovie() {
-        
-        guard let detailViewType = detailViewType
-        else {
-            fatalError("not linked detailViewType")
-        }
-        
+    func configureView() {
         switch detailViewType {
         case let .movie(movie):
             postImageView.image = UIImage(named: movie.title)
@@ -110,9 +109,36 @@ private extension DetailViewController {
             overViewLabel.text = movie.overview
             title = movie.title
             view.backgroundColor = movie.backgroundColor.color
-            
         case let .book(book):
-            break
+            postImageView.fetchImage(
+                urlString: book.thumbnail,
+                defaultImage: UIImage(systemName: BWImageNames.System.book),
+                backgroundColorForError: .systemGray6
+            )
+            title = book.title
+            titleLabel.text = book.title
+            infoLabel.text = book.releaseDate
+            overViewLabel.text = ""
+        case .none:
+            fatalError("not linked detailViewType")
+        }
+    }
+    
+    func saveBook(book: Book) {
+        let realm = try! Realm()
+        let task = BookTable(
+            id: book.isbn,
+            title: book.title,
+            releaseDate: book.releaseDate,
+            thumbnail: book.thumbnail
+        )
+        do {
+            try realm.write {
+                realm.add(task, update: .modified)
+                print("Book: \(book.title) Add Succeed")
+            }
+        } catch {
+            print("ERROR: \(error)")
         }
     }
 }
