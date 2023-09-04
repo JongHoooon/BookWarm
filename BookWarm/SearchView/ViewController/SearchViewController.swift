@@ -69,7 +69,20 @@ extension SearchViewController: UICollectionViewDataSource {
 }
 
 extension SearchViewController: UICollectionViewDelegate {
-    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        let item = searchedBooks[indexPath.item]
+        vc.detailViewType = .book(book: item)
+        navigationController?.pushViewController(
+            vc,
+            animated: true
+        )
+        
+    }
 }
 
 extension SearchViewController: CollectionViewConfigureProtocol {
@@ -175,8 +188,8 @@ private extension SearchViewController {
                     .map {
                         return Book(
                             title: $0["title"].stringValue,
-                            releaseDate: $0["datetime"].stringValue,
-                            thumbnail: $0["thumbnail"].stringValue
+                            thumbnail: $0["thumbnail"].stringValue,
+                            releaseDate: $0["datetime"].stringValue
                         )
                     }
                 
@@ -204,6 +217,7 @@ private extension SearchViewController {
             target: self,
             action: #selector(dissmissBarButtonTapped)
         )
+        navigationItem.backButtonTitle = ""
     }
 
     @objc

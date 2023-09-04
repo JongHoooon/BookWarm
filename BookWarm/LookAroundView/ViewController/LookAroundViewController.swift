@@ -148,7 +148,7 @@ private extension LookAroundViewController {
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         let nav = UINavigationController(rootViewController: vc)
         
-        vc.movie = movies[index]
+        vc.detailViewType = .movie(movie: movies[index])
         vc.configureDismissButton()
         nav.modalPresentationStyle = .fullScreen
         

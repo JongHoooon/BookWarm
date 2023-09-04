@@ -7,11 +7,16 @@
 
 import UIKit
 
+enum DetailViewType {
+    case movie(movie: Movie)
+    case book(book: Book)
+}
+
 final class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var movie: Movie?
+    var detailViewType: DetailViewType?
     private let placeholderText = "내용을 입력해주세요."
 
     // MARK: - UI
@@ -90,15 +95,25 @@ private extension DetailViewController {
     }
     
     func configureMovie() {
-        guard let movie = movie else { return }
         
-        postImageView.image = UIImage(named: movie.title)
-        titleLabel.text = movie.title
-        infoLabel.text = movie.infoText
-        rateLabel.text = "평균 ★ \(movie.rate)"
-        overViewLabel.text = movie.overview
-        title = movie.title
-        view.backgroundColor = movie.backgroundColor.color
+        guard let detailViewType = detailViewType
+        else {
+            fatalError("not linked detailViewType")
+        }
+        
+        switch detailViewType {
+        case let .movie(movie):
+            postImageView.image = UIImage(named: movie.title)
+            titleLabel.text = movie.title
+            infoLabel.text = movie.infoText
+            rateLabel.text = "평균 ★ \(movie.rate)"
+            overViewLabel.text = movie.overview
+            title = movie.title
+            view.backgroundColor = movie.backgroundColor.color
+            
+        case let .book(book):
+            break
+        }
     }
 }
 

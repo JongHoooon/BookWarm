@@ -48,13 +48,7 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
             backgroundColorForError: .systemGray6
         )
         
-        let releaseDateText = book.releaseDate
-            .prefix(10)
-            .split(separator: "-")
-            .suffix(2)
-            .joined(separator: ".")
-        
-        relaeseDateLabel.text = releaseDateText
+        relaeseDateLabel.text = book.releaseDate
         titleLabel.text = book.title
         likeButton.isHidden = true
         contentView.backgroundColor = .systemGray3
