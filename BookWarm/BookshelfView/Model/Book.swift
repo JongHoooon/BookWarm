@@ -5,6 +5,8 @@
 //  Created by JongHoon on 2023/08/08.
 //
 
+import Foundation
+
 import RealmSwift
 
 struct Book {
@@ -38,6 +40,7 @@ class BookTable: Object {
     @Persisted var title: String
     @Persisted var releaseDate: String
     @Persisted var thumbnail: String
+    @Persisted var searchedDate: Date
     
     convenience init(
         id: String,
@@ -50,5 +53,15 @@ class BookTable: Object {
         self.title = title
         self.releaseDate = releaseDate
         self.thumbnail = thumbnail
+        self.searchedDate = Date()
+    }
+    
+    func toBook() -> Book {
+        return Book(
+            isbn: _id,
+            title: title,
+            thumbnail: thumbnail,
+            releaseDate: releaseDate
+        )
     }
 }

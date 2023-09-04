@@ -7,6 +7,7 @@
 
 import UIKit
 
+import RealmSwift
 
 final class BookshelfCollectionViewController: UICollectionViewController {
     
@@ -14,7 +15,7 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     private var movies = MovieInfo().movies
     private var movieSearched = MovieInfo().movies
-    
+    private var tasks: Results<BookTable>!
     
     // MARK: - UI
     
@@ -25,6 +26,14 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let realm = try! Realm()
+        tasks = realm
+            .objects(BookTable.self)
+            .sorted(
+                byKeyPath: "searchedDate",
+                ascending: false
+            )
+        
         collectionView.keyboardDismissMode = .onDrag
         
         registerCell()
@@ -32,6 +41,10 @@ final class BookshelfCollectionViewController: UICollectionViewController {
         configureNavigationItems()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         presentSearchView()
@@ -146,7 +159,7 @@ extension BookshelfCollectionViewController {
         numberOfItemsInSection section: Int
     ) -> Int {
         
-        return movieSearched.count
+        return tasks.count
     }
     
     override func collectionView(
@@ -159,14 +172,8 @@ extension BookshelfCollectionViewController {
             for: indexPath
         ) as! BookshelfCollectionViewCell
         
-        let item = movieSearched[indexPath.item]
-        cell.configureMovieCell(item: item)
-        cell.likeButton.tag = indexPath.item
-        cell.likeButton.addTarget(
-            self,
-            action: #selector(likeButtonTapped),
-            for: .touchUpInside
-        )
+        let item = tasks[indexPath.item].toBook()
+        cell.configureBookCell(item: item)
         
         return cell
     }
@@ -178,8 +185,8 @@ extension BookshelfCollectionViewController {
         let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        let item = movieSearched[indexPath.item]
-        vc.detailViewType = .movie(movie: item)
+        let item = tasks[indexPath.item].toBook()
+        vc.detailViewType = .book(book: item)
         
         navigationController?.pushViewController(vc, animated: true)
     }
