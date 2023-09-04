@@ -18,14 +18,13 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     // MARK: - UI
     
-    private let searchBar = UISearchBar()
+//    private let searchBar = UISearchBar()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
         collectionView.keyboardDismissMode = .onDrag
         
         registerCell()
@@ -109,10 +108,6 @@ private extension BookshelfCollectionViewController {
     func configureNavigationItems() {
         title = "brick의 책장"
         navigationItem.backButtonTitle = ""
-        
-        navigationItem.titleView = searchBar
-        searchBar.tintColor = .label
-        searchBar.placeholder = "검색어를 입력해주세요."
     }
     
     func presentSearchView() {
@@ -187,23 +182,4 @@ extension BookshelfCollectionViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-// MARK: - Search Bar
-
-extension BookshelfCollectionViewController: UISearchBarDelegate {
-    
-    func searchBar(
-        _ searchBar: UISearchBar,
-        textDidChange searchText: String
-    ) {
-        guard let text = searchBar.text else { return }
-        
-        movieSearched = text.isEmpty ?
-            movies :
-            movies.filter { $0.title.contains(text) }
-        
-        collectionView.reloadData()
-    }
-    
 }

@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,14 +36,7 @@
                             <outlet property="delegate" destination="Mtz-oL-agV" id="P6Z-FO-8yT"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="4dS-Vw-Nfi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="SiR-wo-PsD">
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <connections>
-                                <action selector="searchBarButtonTapped:" destination="Mtz-oL-agV" id="5n1-Cw-txf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="4dS-Vw-Nfi"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ux-dj-NxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,8 +65,5 @@
     </scenes>
     <resources>
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
