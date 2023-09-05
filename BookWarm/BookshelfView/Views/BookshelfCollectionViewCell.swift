@@ -50,7 +50,7 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
             )
         } else {
             movieImageView.image = DocumentRepositoryManager.shared.loadImage(
-                fileName: book.postFileName,
+                fileName: book.posterFileName,
                 placeholder: UIImage(systemName: BWImageNames.System.book)
             )
         }

@@ -76,7 +76,7 @@ extension SearchViewController: UICollectionViewDelegate {
         let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         let item = searchedBooks[indexPath.item]
-        vc.detailViewType = .book(book: item)
+        vc.detailViewType = .book(book: item, editable: false)
         navigationController?.pushViewController(
             vc,
             animated: true

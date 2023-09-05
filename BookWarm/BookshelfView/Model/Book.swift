@@ -21,20 +21,23 @@ struct Book {
             .suffix(2)
             .joined(separator: ".")
     }
+    var memo: String?
     
     init(
         isbn: String,
         title: String,
         thumbnail: String? = nil,
-        releaseDate: String
+        releaseDate: String,
+        memo: String? = nil
     ) {
         self.isbn = isbn
         self.title = title
         self.thumbnail = thumbnail
         self._releaseDate = releaseDate
+        self.memo = memo
     }
     
-    var postFileName: String {
+    var posterFileName: String {
         return "\(isbn)_post.jpg"
     }
 }
@@ -44,25 +47,30 @@ class BookTable: Object {
     @Persisted var title: String
     @Persisted var releaseDate: String
     @Persisted var thumbnail: String
+    @Persisted var memo: String?
     @Persisted var searchedDate: Date
     
     convenience init(
         id: String,
         title: String,
-        releaseDate: String
+        releaseDate: String,
+        memeo: String? = nil,
+        searchedDate: Date = Date()
     ) {
         self.init()
         self._id = id
         self.title = title
         self.releaseDate = releaseDate
-        self.searchedDate = Date()
+        self.memo = memeo
+        self.searchedDate = searchedDate
     }
     
     func toBook() -> Book {
         return Book(
             isbn: _id,
             title: title,
-            releaseDate: releaseDate
+            releaseDate: releaseDate,
+            memo: memo
         )
     }
 }

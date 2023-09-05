@@ -186,7 +186,7 @@ extension BookshelfCollectionViewController {
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
         let item = tasks[indexPath.item].toBook()
-        vc.detailViewType = .book(book: item)
+        vc.detailViewType = .book(book: item, editable: true)
         
         navigationController?.pushViewController(vc, animated: true)
     }

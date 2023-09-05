@@ -11,15 +11,17 @@ import RealmSwift
 
 enum DetailViewType {
     case movie(movie: Movie)
-    case book(book: Book)
+    case book(book: Book, editable: Bool)
 }
 
 final class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let realm = try! Realm()
     var detailViewType: DetailViewType?
     private let placeholderText = "내용을 입력해주세요."
+    private var book: Book?
 
     // MARK: - UI
     
@@ -30,6 +32,19 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak private var overViewLabel: UILabel!
     @IBOutlet weak private var memoTextView: UITextView!
     @IBOutlet weak private var bottomBackgroundView: UIView!
+    
+    let deleteBarButtonItem = UIBarButtonItem(
+        image: UIImage(systemName: "trash"),
+        style: .plain,
+        target: nil,
+        action: nil
+    )
+    let saveBarButtonItem = UIBarButtonItem(
+        image: UIImage(systemName: "square.and.arrow.down"),
+        style: .done,
+        target: nil,
+        action: nil
+    )
     
     // MARK: - Lifecycle
     
@@ -45,7 +60,8 @@ final class DetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if case let .book(book) = detailViewType {
+        if case let .book(book, editable) = detailViewType,
+            editable == false {
             saveBook(book: book)
         }
     }
@@ -100,8 +116,8 @@ private extension DetailViewController {
         memoTextView.layer.borderColor = UIColor.lightGray.cgColor
         memoTextView.layer.borderWidth = 0.5
         memoTextView.configureCornerRadius(8.0)
-        memoTextView.textColor = .lightGray
-        memoTextView.text = placeholderText
+//        memoTextView.textColor = .lightGray
+//        memoTextView.text = placeholderText
     }
     
     func configureView() {
@@ -114,16 +130,17 @@ private extension DetailViewController {
             overViewLabel.text = movie.overview
             title = movie.title
             view.backgroundColor = movie.backgroundColor.color
-        case let .book(book):
+        case let .book(book, editable):
+            self.book = book
             if let thumbnail = book.thumbnail {
                 postImageView.fetchImage(
-                    urlString: book.thumbnail ?? "",
+                    urlString: thumbnail,
                     defaultImage: UIImage(systemName: BWImageNames.System.book),
                     backgroundColorForError: .systemGray6
                 )
             } else {
                 postImageView.image = DocumentRepositoryManager.shared.loadImage(
-                    fileName: book.postFileName,
+                    fileName: book.posterFileName,
                     placeholder: UIImage(systemName: BWImageNames.System.book)
                 )
             }
@@ -132,6 +149,17 @@ private extension DetailViewController {
             titleLabel.text = book.title
             infoLabel.text = book.releaseDate
             overViewLabel.text = ""
+            if let memo = book.memo {
+                memoTextView.text = memo
+            }
+            
+            switch editable {
+            case true:
+                configureEditableNavigationBar()
+            case false:
+                memoTextView.isHidden = true
+            }
+            
         case .none:
             fatalError("not linked detailViewType")
         }
@@ -156,7 +184,7 @@ private extension DetailViewController {
         if book.thumbnail != "",
            let image = postImageView.image {
             DocumentRepositoryManager.shared.saveImage(
-                fileName: book.postFileName,
+                fileName: book.posterFileName,
                 image: image
             )
         }
@@ -179,4 +207,66 @@ extension DetailViewController: UITextViewDelegate {
         }
     }
     
+    func configureEditableNavigationBar() {
+        memoTextView.isHidden = false
+        
+        deleteBarButtonItem.tintColor = .red
+        saveBarButtonItem.tintColor = .black
+        navigationItem.rightBarButtonItems = [
+            saveBarButtonItem, deleteBarButtonItem
+        ]
+        
+        deleteBarButtonItem.target = self
+        deleteBarButtonItem.action = #selector(deleteButtonTapped)
+        saveBarButtonItem.target = self
+        saveBarButtonItem.action = #selector(saveButtonTapped)
+    }
+    
+    @objc
+    func deleteButtonTapped() {
+        
+        guard let book = book,
+              let bookObject = realm.object(
+                ofType: BookTable.self,
+                forPrimaryKey: book.isbn
+              )
+        else {
+            return
+        }
+        
+        DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
+        do {
+            try realm.write {
+                realm.delete(bookObject)
+            }
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print(error)
+        }
+    }
+    
+    @objc
+    func saveButtonTapped() {
+        guard let book = book,
+              let bookObject = realm.object(
+                ofType: BookTable.self,
+                forPrimaryKey: book.isbn
+              )
+        else {
+            return
+        }
+                
+        do {
+            try realm.write {
+                bookObject.memo = memoTextView.text
+                realm.add(
+                    bookObject,
+                    update: .modified
+                )
+            }
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print(error)
+        }
+    }
 }
