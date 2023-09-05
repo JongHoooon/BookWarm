@@ -40,6 +40,11 @@ final class DetailViewController: UIViewController {
         
         configureView()
         configureUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if case let .book(book) = detailViewType {
             saveBook(book: book)
         }
@@ -110,11 +115,19 @@ private extension DetailViewController {
             title = movie.title
             view.backgroundColor = movie.backgroundColor.color
         case let .book(book):
-            postImageView.fetchImage(
-                urlString: book.thumbnail,
-                defaultImage: UIImage(systemName: BWImageNames.System.book),
-                backgroundColorForError: .systemGray6
-            )
+            if let thumbnail = book.thumbnail {
+                postImageView.fetchImage(
+                    urlString: book.thumbnail ?? "",
+                    defaultImage: UIImage(systemName: BWImageNames.System.book),
+                    backgroundColorForError: .systemGray6
+                )
+            } else {
+                postImageView.image = DocumentRepositoryManager.shared.loadImage(
+                    fileName: book.postFileName,
+                    placeholder: UIImage(systemName: BWImageNames.System.book)
+                )
+            }
+            
             title = book.title
             titleLabel.text = book.title
             infoLabel.text = book.releaseDate
@@ -129,8 +142,7 @@ private extension DetailViewController {
         let task = BookTable(
             id: book.isbn,
             title: book.title,
-            releaseDate: book.releaseDate,
-            thumbnail: book.thumbnail
+            releaseDate: book.releaseDate
         )
         do {
             try realm.write {
@@ -139,6 +151,14 @@ private extension DetailViewController {
             }
         } catch {
             print("ERROR: \(error)")
+        }
+        
+        if book.thumbnail != "",
+           let image = postImageView.image {
+            DocumentRepositoryManager.shared.saveImage(
+                fileName: book.postFileName,
+                image: image
+            )
         }
     }
 }

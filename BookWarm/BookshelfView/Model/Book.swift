@@ -12,7 +12,7 @@ import RealmSwift
 struct Book {
     let isbn: String
     let title: String
-    let thumbnail: String
+    let thumbnail: String?
     private let _releaseDate: String
     var releaseDate: String {
         return _releaseDate
@@ -25,13 +25,17 @@ struct Book {
     init(
         isbn: String,
         title: String,
-        thumbnail: String,
+        thumbnail: String? = nil,
         releaseDate: String
     ) {
         self.isbn = isbn
         self.title = title
         self.thumbnail = thumbnail
         self._releaseDate = releaseDate
+    }
+    
+    var postFileName: String {
+        return "\(isbn)_post.jpg"
     }
 }
 
@@ -45,14 +49,12 @@ class BookTable: Object {
     convenience init(
         id: String,
         title: String,
-        releaseDate: String,
-        thumbnail: String
+        releaseDate: String
     ) {
         self.init()
         self._id = id
         self.title = title
         self.releaseDate = releaseDate
-        self.thumbnail = thumbnail
         self.searchedDate = Date()
     }
     
@@ -60,7 +62,6 @@ class BookTable: Object {
         return Book(
             isbn: _id,
             title: title,
-            thumbnail: thumbnail,
             releaseDate: releaseDate
         )
     }

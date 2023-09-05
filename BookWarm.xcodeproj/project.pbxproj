@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED0BFD332AA5A2A100BF1353 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = ED0BFD322AA5A2A100BF1353 /* Realm */; };
 		ED0BFD352AA5A2A100BF1353 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED0BFD342AA5A2A100BF1353 /* RealmSwift */; };
+		ED227AEA2AA719B3004A6551 /* DocumentRepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED227AE92AA719B3004A6551 /* DocumentRepositoryManager.swift */; };
 		ED4161CE2A78EE0800366EB6 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161CD2A78EE0800366EB6 /* Detail.storyboard */; };
 		ED4161D02A78F7A600366EB6 /* StroyboardNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */; };
 		ED4161D72A7A198B00366EB6 /* BWColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161D62A7A198B00366EB6 /* BWColors.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED227AE92AA719B3004A6551 /* DocumentRepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepositoryManager.swift; sourceTree = "<group>"; };
 		ED4161CD2A78EE0800366EB6 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		ED4161CF2A78F7A600366EB6 /* StroyboardNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyboardNames.swift; sourceTree = "<group>"; };
 		ED4161D62A7A198B00366EB6 /* BWColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWColors.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED227AE82AA7193F004A6551 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ED227AE92AA719B3004A6551 /* DocumentRepositoryManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		ED4161DA2A7A25D400366EB6 /* LookAroundView */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		ED885F132A77A852001BD107 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				ED227AE82AA7193F004A6551 /* Manager */,
 				ED44D50A2A7BEB4500582E49 /* Protocol */,
 				ED4AD5722A77A47C00922860 /* Extension */,
 				ED885F142A77A860001BD107 /* BWImageNames.swift */,
@@ -383,6 +394,7 @@
 				ED4627162A7A37E8005F453C /* UIView+Extension.swift in Sources */,
 				ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */,
 				ED4AD56B2A77A0B100922860 /* MovieInfo.swift in Sources */,
+				ED227AEA2AA719B3004A6551 /* DocumentRepositoryManager.swift in Sources */,
 				ED4AD5742A77A49500922860 /* UIViewController+Extension.swift in Sources */,
 				ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */,
 				ED4AD54E2A7799EC00922860 /* SceneDelegate.swift in Sources */,

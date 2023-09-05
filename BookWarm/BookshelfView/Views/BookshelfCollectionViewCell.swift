@@ -42,11 +42,20 @@ final class BookshelfCollectionViewCell: UICollectionViewCell {
     
     func configureBookCell(item book: Book) {
         
-        movieImageView.fetchImage(
-            urlString: book.thumbnail,
-            defaultImage: UIImage(systemName: BWImageNames.System.book),
-            backgroundColorForError: .systemGray6
-        )
+        if let thumbnail = book.thumbnail {
+            movieImageView.fetchImage(
+                urlString: thumbnail,
+                defaultImage: UIImage(systemName: BWImageNames.System.book),
+                backgroundColorForError: .systemGray6
+            )
+        } else {
+            movieImageView.image = DocumentRepositoryManager.shared.loadImage(
+                fileName: book.postFileName,
+                placeholder: UIImage(systemName: BWImageNames.System.book)
+            )
+        }
+        
+        
         
         relaeseDateLabel.text = book.releaseDate
         titleLabel.text = book.title
