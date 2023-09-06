@@ -246,26 +246,21 @@ extension DetailViewController: UITextViewDelegate {
     
     @objc
     func saveButtonTapped() {
-        guard let book = book,
-              let bookObject = realm.object(
-                ofType: BookTable.self,
-                forPrimaryKey: book.isbn
-              )
-        else {
-            return
-        }
-                
-        do {
-            try realm.write {
-                bookObject.memo = memoTextView.text
-                realm.add(
-                    bookObject,
-                    update: .modified
+        guard let book = book else { return }
+        
+        Task {
+            do {
+                try await repository?.editBookInfo(
+                    primaryKey: book.isbn,
+                    memo: memoTextView.text
                 )
+                await MainActor.run {
+                    navigationController?.popViewController(animated: true)
+                    return
+                }
+            } catch {
+                print(error)
             }
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print(error)
         }
     }
 }

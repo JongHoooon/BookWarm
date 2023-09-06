@@ -11,6 +11,7 @@ import RealmSwift
 protocol BookTableRepository {
     func fetchBooks() async -> [Book]
     func deleteBook(primaryKey: String) async throws
+    func editBookInfo(primaryKey: String, memo: String) async throws
 }
 
 final class DefaultBookTableRepository: BookTableRepository {
@@ -59,6 +60,34 @@ final class DefaultBookTableRepository: BookTableRepository {
                 do {
                     try self.realm.write {
                         self.realm.delete(bookObject)
+                    }
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+    
+    func editBookInfo(
+        primaryKey: String,
+        memo: String
+    ) async throws {
+        try await withCheckedThrowingContinuation { [weak self] continuation in
+            guard let self else { return }
+            realmTaskQueue.async {
+                guard let bookObject = self.realm.object(
+                    ofType: BookTable.self,
+                    forPrimaryKey: primaryKey
+                ) else { return }
+
+                do {
+                    try self.realm.write {
+                        bookObject.memo = memo
+                        self.realm.add(
+                            bookObject,
+                            update: .modified
+                        )
                     }
                     continuation.resume()
                 } catch {
