@@ -45,53 +45,27 @@ final class DefaultBookTableRepository: BookTableRepository {
                 continuation.resume(returning: books)
             }
         }
-//        let books: [Book] = realm
-//            .objects(BookTable.self)
-//            .sorted(
-//                byKeyPath: "searchedDate",
-//                ascending: false
-//            )
-//            .map { $0.toBook() }
-//
-//        return books
     }
     
     func deleteBook(primaryKey: String) async throws {
-        //        realmTaskQueue.async {
-        //            guard let bookObject = self.realm.object(
-        //                ofType: BookTable.self,
-        //                forPrimaryKey: primaryKey
-        //            )
-        //            else { return }
-        //
-        //            do {
-        //                try self.realm.write {
-        //                    self.realm.delete(bookObject)
-        //                }
-        //            } catch {
-        //                throw error
-        //                print(error)
-        //            }
-        //        }
-        
-#warning("withCheckedThrowingContinuation 알아보기")
-        //        try await withCheckedThrowingContinuation { continuation in
-        //
-        //            realmTaskQueue.async {
-        //
-        //                guard let bookObject = self.realm.object
-        //                        ofType: BookTable.self,
-        //                      forPrimaryKey: primaryKey
-        //                )
-        //                else { return }
-        //                do {
-        //                    try self.realm.write {
-        //                        self.realm.delete(bookObject)
-        //
-        //                    }
-        //                }
-        //            }
-        //        }
+        try await withCheckedThrowingContinuation { [weak self] continuation in
+            guard let self else { return }
+            realmTaskQueue.async {
+                guard let bookObject = self.realm.object(
+                    ofType: BookTable.self,
+                    forPrimaryKey: primaryKey
+                ) else { return }
+                
+                do {
+                    try self.realm.write {
+                        self.realm.delete(bookObject)
+                    }
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
     }
 }
 

@@ -157,7 +157,7 @@ extension BookshelfCollectionViewController {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return tasks.count
+        return tasks?.count ?? 0
     }
     
     override func collectionView(

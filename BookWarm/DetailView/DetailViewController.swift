@@ -226,32 +226,18 @@ extension DetailViewController: UITextViewDelegate {
     @objc
     func deleteButtonTapped() {
         
-//        guard let book = book,
-//              let bookObject = realm.object(
-//                ofType: BookTable.self,
-//                forPrimaryKey: book.isbn
-//              )
-//        else {
-//            return
-//        }
-//
-//        DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
-//        do {
-//            try realm.write {
-//                realm.delete(bookObject)
-//            }
-//            navigationController?.popViewController(animated: true)
-//        } catch {
-//            print(error)
-//        }
-        
         guard let book = book else { return }
         
         Task {
             do {
-                try await repository?.deleteBook(primaryKey: book.isbn)
-                navigationController?.popViewController(animated: true)
                 DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
+                try await repository?.deleteBook(primaryKey: book.isbn)
+                
+                await MainActor.run {
+                    navigationController?.popViewController(animated: true)
+                    return
+                }
+                
             } catch {
                 print(error)
             }
