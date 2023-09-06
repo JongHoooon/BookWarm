@@ -16,6 +16,7 @@
 		ED4161D92A7A23D600366EB6 /* Bookshelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */; };
 		ED4161DE2A7A262E00366EB6 /* LookAround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */; };
 		ED4161E02A7A264300366EB6 /* LookAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */; };
+		ED4345D52AA84ACF005B9FE2 /* BookTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4345D42AA84ACF005B9FE2 /* BookTableRepository.swift */; };
 		ED44D50C2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */; };
 		ED44D50E2A7BEC1100582E49 /* TableViewConfigureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */; };
 		ED46270D2A7A2C7F005F453C /* LookAroundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		ED4161D82A7A23D600366EB6 /* Bookshelf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookshelf.storyboard; sourceTree = "<group>"; };
 		ED4161DD2A7A262E00366EB6 /* LookAround.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookAround.storyboard; sourceTree = "<group>"; };
 		ED4161DF2A7A264300366EB6 /* LookAroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundViewController.swift; sourceTree = "<group>"; };
+		ED4345D42AA84ACF005B9FE2 /* BookTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableRepository.swift; sourceTree = "<group>"; };
 		ED44D50B2A7BEB6000582E49 /* CollectionViewConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewConfigureProtocol.swift; sourceTree = "<group>"; };
 		ED44D50D2A7BEC1100582E49 /* TableViewConfigureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigureProtocol.swift; sourceTree = "<group>"; };
 		ED46270B2A7A2C7F005F453C /* LookAroundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ED4345D32AA84ABA005B9FE2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED4345D42AA84ACF005B9FE2 /* BookTableRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		ED44D50A2A7BEB4500582E49 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		ED4AD54A2A7799EC00922860 /* BookWarm */ = {
 			isa = PBXGroup;
 			children = (
+				ED9214162A821153008E7766 /* .gitignore */,
 				ED4AD54B2A7799EC00922860 /* AppDelegate.swift */,
 				ED4AD54D2A7799EC00922860 /* SceneDelegate.swift */,
 				ED885F132A77A852001BD107 /* Global */,
@@ -180,10 +191,10 @@
 				ED4161DA2A7A25D400366EB6 /* LookAroundView */,
 				ED4AD5752A77A5B100922860 /* SearchView */,
 				ED4AD56F2A77A37400922860 /* DetailView */,
+				ED4345D32AA84ABA005B9FE2 /* Repository */,
 				ED4AD5542A7799ED00922860 /* Assets.xcassets */,
 				ED4AD5562A7799ED00922860 /* LaunchScreen.storyboard */,
 				ED4AD5592A7799ED00922860 /* Info.plist */,
-				ED9214162A821153008E7766 /* .gitignore */,
 			);
 			path = BookWarm;
 			sourceTree = "<group>";
@@ -376,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8817812A8362360038A3D3 /* ImageFetchable.swift in Sources */,
+				ED4345D52AA84ACF005B9FE2 /* BookTableRepository.swift in Sources */,
 				ED4AD5712A77A37F00922860 /* DetailViewController.swift in Sources */,
 				ED9214192A8211A5008E7766 /* APIKey.swift in Sources */,
 				ED885F152A77A860001BD107 /* BWImageNames.swift in Sources */,

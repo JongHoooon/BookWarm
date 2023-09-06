@@ -19,6 +19,7 @@ final class DetailViewController: UIViewController {
     // MARK: - Properties
     
     private let realm = try! Realm()
+    private let repository: BookTableRepository? = DefaultBookTableRepository()
     var detailViewType: DetailViewType?
     private let placeholderText = "내용을 입력해주세요."
     private var book: Book?
@@ -225,23 +226,35 @@ extension DetailViewController: UITextViewDelegate {
     @objc
     func deleteButtonTapped() {
         
-        guard let book = book,
-              let bookObject = realm.object(
-                ofType: BookTable.self,
-                forPrimaryKey: book.isbn
-              )
-        else {
-            return
-        }
+//        guard let book = book,
+//              let bookObject = realm.object(
+//                ofType: BookTable.self,
+//                forPrimaryKey: book.isbn
+//              )
+//        else {
+//            return
+//        }
+//
+//        DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
+//        do {
+//            try realm.write {
+//                realm.delete(bookObject)
+//            }
+//            navigationController?.popViewController(animated: true)
+//        } catch {
+//            print(error)
+//        }
         
-        DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
-        do {
-            try realm.write {
-                realm.delete(bookObject)
+        guard let book = book else { return }
+        
+        Task {
+            do {
+                try await repository?.deleteBook(primaryKey: book.isbn)
+                navigationController?.popViewController(animated: true)
+                DocumentRepositoryManager.shared.removeImage(fileName: book.posterFileName)
+            } catch {
+                print(error)
             }
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print(error)
         }
     }
     

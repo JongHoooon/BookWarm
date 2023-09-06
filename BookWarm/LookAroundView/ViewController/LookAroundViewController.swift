@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RealmSwift
+//import RealmSwift
 
 final class LookAroundViewController: UIViewController {
     
@@ -28,8 +28,8 @@ final class LookAroundViewController: UIViewController {
         configureCollectionViewLayout()
         configureNavigationBar()
         
-        let realm = try! Realm()
-        print(realm.configuration.fileURL)
+//        let realm = try! Realm()
+//        print(realm.configuration.fileURL)
     }
     
 }

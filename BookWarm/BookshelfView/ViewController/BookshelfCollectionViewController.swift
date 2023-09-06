@@ -13,26 +13,17 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
+    private let repository: BookTableRepository? = DefaultBookTableRepository()
     private var movies = MovieInfo().movies
     private var movieSearched = MovieInfo().movies
-    private var tasks: Results<BookTable>!
+    private var tasks: [Book]!
     
     // MARK: - UI
-    
-//    private let searchBar = UISearchBar()
-    
+        
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let realm = try! Realm()
-        tasks = realm
-            .objects(BookTable.self)
-            .sorted(
-                byKeyPath: "searchedDate",
-                ascending: false
-            )
         
         collectionView.keyboardDismissMode = .onDrag
         
@@ -43,7 +34,15 @@ final class BookshelfCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        Task {
+            tasks = await repository?.fetchBooks()
+            
+            guard let _ = tasks else { return }
+            
+            await MainActor.run {
+                collectionView.reloadData()
+            }
+        }
     }
     
     @IBAction private func searchBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -158,7 +157,6 @@ extension BookshelfCollectionViewController {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        
         return tasks.count
     }
     
@@ -172,7 +170,7 @@ extension BookshelfCollectionViewController {
             for: indexPath
         ) as! BookshelfCollectionViewCell
         
-        let item = tasks[indexPath.item].toBook()
+        let item = tasks[indexPath.item]
         cell.configureBookCell(item: item)
         
         return cell
@@ -185,7 +183,7 @@ extension BookshelfCollectionViewController {
         let sb = UIStoryboard(name: StroyboardNames.detail, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
         
-        let item = tasks[indexPath.item].toBook()
+        let item = tasks[indexPath.item]
         vc.detailViewType = .book(book: item, editable: true)
         
         navigationController?.pushViewController(vc, animated: true)
