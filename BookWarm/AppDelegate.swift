@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = .label
         UITabBar.appearance().tintColor = .label
+        
+//        print("✨✨✨", Realm.Configuration().schemaVersion, "✨✨✨")
+        
+        let config = Realm.Configuration(
+            schemaVersion: 6,
+            migrationBlock: { migration, oldSchemaVersion in
+                
+                // BookTable isStar Column 추가
+                if oldSchemaVersion < 1 { }
+                
+                // BookTable isStar Column 삭제
+                if oldSchemaVersion < 2 { }
+                
+                // BookTable column명 변경 memo => bookMemo
+                if oldSchemaVersion < 3 {
+                    migration.renameProperty(
+                        onType: BookTable.className(),
+                        from: "memo",
+                        to: "bookMemo"
+                    )
+                }
+                
+                // BookTable bookSummary column 추가(title + summary)
+                if oldSchemaVersion < 4 {
+                    migration.enumerateObjects(
+                        ofType: BookTable.className(), { oldObject, newObject in
+                            guard let new = newObject else { return }
+                            guard let old = oldObject else { return }
+                            new["bookSummary"] = "제목: \(old["title"] ?? ""), 메모: \(old["bookMemo"] ?? "")"
+                        }
+                    )
+                }
+                
+                // BookTable count column 추가(기본값 지정 필요)
+                if oldSchemaVersion < 5 {
+                    migration.enumerateObjects(
+                        ofType: BookTable.className(), { _, newObject in
+                            guard let new = newObject else { return }
+                            new["count"] = 99
+                        }
+                    )
+                }
+                
+                // BookTable count column 타입 변경(Int -> String)
+                if oldSchemaVersion < 6 {
+                    migration.enumerateObjects(
+                        ofType: BookTable.className(), { oldObject, newObject in
+                            guard let new = newObject else { return }
+                            guard let old = oldObject else { return }
+                            
+                            new["count"] = "\(old["count"] ?? 0)"
+                        })
+                }
+            }
+        )
+        Realm.Configuration.defaultConfiguration = config
         
         return true
     }

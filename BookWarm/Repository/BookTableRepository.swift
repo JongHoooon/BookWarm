@@ -24,6 +24,9 @@ final class DefaultBookTableRepository: BookTableRepository {
             try realmTaskQueue.sync {
                 realm = try Realm(queue: realmTaskQueue)
             }
+            if let url = realm.configuration.fileURL {
+                print("📁📁📁 \(String(describing: url)) 📁📁📁")
+            }
         } catch {
             print(error)
             return nil
@@ -83,7 +86,7 @@ final class DefaultBookTableRepository: BookTableRepository {
 
                 do {
                     try self.realm.write {
-                        bookObject.memo = memo
+                        bookObject.bookMemo = memo
                         self.realm.add(
                             bookObject,
                             update: .modified

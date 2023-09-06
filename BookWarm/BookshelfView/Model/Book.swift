@@ -47,22 +47,26 @@ class BookTable: Object {
     @Persisted var title: String
     @Persisted var releaseDate: String
     @Persisted var thumbnail: String
-    @Persisted var memo: String?
+    @Persisted var bookMemo: String?
     @Persisted var searchedDate: Date
+    @Persisted var bookSummary: String
+    @Persisted var count: String
     
     convenience init(
         id: String,
         title: String,
         releaseDate: String,
-        memeo: String? = nil,
+        memo: String? = nil,
         searchedDate: Date = Date()
     ) {
         self.init()
         self._id = id
         self.title = title
         self.releaseDate = releaseDate
-        self.memo = memeo
+        self.bookMemo = memo
         self.searchedDate = searchedDate
+        self.bookSummary = "제목: \(title), 메모: \(memo ?? "")"
+        self.count = "0"
     }
     
     func toBook() -> Book {
@@ -70,7 +74,7 @@ class BookTable: Object {
             isbn: _id,
             title: title,
             releaseDate: releaseDate,
-            memo: memo
+            memo: bookMemo
         )
     }
 }
